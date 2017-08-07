@@ -1,0 +1,6 @@
+site_name: PyChildren Guidebook
+
+pages:
+    - Home: index.md
+    - Lessons: 
+      - Lesson 1: lesson1.md
