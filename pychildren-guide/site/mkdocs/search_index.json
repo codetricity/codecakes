@@ -1,0 +1,54 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "PyChildren Guide\n\n\nTeaching Python to your own middle school kids.\n\n\nLearning Objectives\n\n\nLesson 1\n\n\n\n\ninfinite while loop\n\n\nx, y coordinate system\n\n\nvariable assignment\n\n\n\n\nLesson 2\n\n\n\n\nincrement (in while loop)", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#pychildren-guide", 
+            "text": "Teaching Python to your own middle school kids.", 
+            "title": "PyChildren Guide"
+        }, 
+        {
+            "location": "/#learning-objectives", 
+            "text": "", 
+            "title": "Learning Objectives"
+        }, 
+        {
+            "location": "/#lesson-1", 
+            "text": "infinite while loop  x, y coordinate system  variable assignment", 
+            "title": "Lesson 1"
+        }, 
+        {
+            "location": "/#lesson-2", 
+            "text": "increment (in while loop)", 
+            "title": "Lesson 2"
+        }, 
+        {
+            "location": "/lesson1/", 
+            "text": "Lesson 1: x,y coordinate\n\n\nCreate this\n\n\n\n\nUsing this code.\n\n\nimport pygame\n\nSIZE = (800, 600)\n\nDISPLAY = pygame.display.set_mode(SIZE)\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n    pygame.display.update()\n\n\n\nLoad Image\n\n\ndonut = pygame.image.load('img/donut.png')\n\n\n\nNotes: \n\n\n\n\nLoad image above main while loop.\n\n\n\n\nBlit Image (Displays Image)\n\n\nDISPLAY.blit(donut, (131, 465))\n\n\n\nNotes: \n\n\n\n\nMust be in main while loop.\n\n\n\n\nBackground Fill\n\n\nDISPLAY.fill(mint)\n\n\n\nNotes: \n\n\n\n\nmust be above the images that are blitted to screen\n\n\nmint is a variable that is defined as rgb\n\n\n\n\nExample:\n\n\nmint = (180,255,229)", 
+            "title": "Lesson 1"
+        }, 
+        {
+            "location": "/lesson1/#lesson-1-xy-coordinate", 
+            "text": "Create this   Using this code.  import pygame\n\nSIZE = (800, 600)\n\nDISPLAY = pygame.display.set_mode(SIZE)\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n    pygame.display.update()", 
+            "title": "Lesson 1: x,y coordinate"
+        }, 
+        {
+            "location": "/lesson1/#load-image", 
+            "text": "donut = pygame.image.load('img/donut.png')  Notes:    Load image above main while loop.", 
+            "title": "Load Image"
+        }, 
+        {
+            "location": "/lesson1/#blit-image-displays-image", 
+            "text": "DISPLAY.blit(donut, (131, 465))  Notes:    Must be in main while loop.", 
+            "title": "Blit Image (Displays Image)"
+        }, 
+        {
+            "location": "/lesson1/#background-fill", 
+            "text": "DISPLAY.fill(mint)  Notes:    must be above the images that are blitted to screen  mint is a variable that is defined as rgb   Example:  mint = (180,255,229)", 
+            "title": "Background Fill"
+        }
+    ]
+}
