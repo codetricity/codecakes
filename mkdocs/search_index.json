@@ -49,6 +49,41 @@
             "location": "/lesson1/#background-fill", 
             "text": "DISPLAY.fill(mint)  Notes:    must be above the images that are blitted to screen  mint is a variable that is defined as rgb   Example:  mint = (180,255,229)", 
             "title": "Background Fill"
+        }, 
+        {
+            "location": "/lesson02/", 
+            "text": "Goal\n\n\nMake the cupcake move, first down, then right.\n\n\n\n\nStarting Code\n\n\nimport pygame\n\nSIZE = (800, 600)\n\nDISPLAY = pygame.display.set_mode(SIZE)\n\ncupcake = pygame.image.load(\"img/cupcake.png\")\nx = 0\ny = 0\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n    DISPLAY.blit(cupcake, (x, y))\n    pygame.display.update()\n\n\n\nTips\n\n\nPut the x or y variable in the main while loop and\nincrement it with x = x + 1.  \n\n\nExtra Credit Quiz\n\n\nDo you know the shorthard for\nx = x + 1?", 
+            "title": "Lesson 2"
+        }, 
+        {
+            "location": "/lesson02/#goal", 
+            "text": "Make the cupcake move, first down, then right.", 
+            "title": "Goal"
+        }, 
+        {
+            "location": "/lesson02/#starting-code", 
+            "text": "import pygame\n\nSIZE = (800, 600)\n\nDISPLAY = pygame.display.set_mode(SIZE)\n\ncupcake = pygame.image.load(\"img/cupcake.png\")\nx = 0\ny = 0\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n    DISPLAY.blit(cupcake, (x, y))\n    pygame.display.update()", 
+            "title": "Starting Code"
+        }, 
+        {
+            "location": "/lesson02/#tips", 
+            "text": "Put the x or y variable in the main while loop and\nincrement it with x = x + 1.", 
+            "title": "Tips"
+        }, 
+        {
+            "location": "/lesson02/#extra-credit-quiz", 
+            "text": "Do you know the shorthard for\nx = x + 1?", 
+            "title": "Extra Credit Quiz"
+        }, 
+        {
+            "location": "/answers/", 
+            "text": "Lesson 02\n\n\nExtra Credit: x += 1 is the shorthand for x = x + 1", 
+            "title": "Answers"
+        }, 
+        {
+            "location": "/answers/#lesson-02", 
+            "text": "Extra Credit: x += 1 is the shorthand for x = x + 1", 
+            "title": "Lesson 02"
         }
     ]
 }
