@@ -4,3 +4,5 @@ pages:
     - Home: index.md
     - Lessons: 
       - Lesson 1: lesson1.md
+      - Lesson 2: lesson02.md
+      - Answers: answers.md
