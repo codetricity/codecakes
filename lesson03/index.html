@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Lesson 1 - PyChildren Guidebook</title>
+        <title>Lesson 3 - PyChildren Guidebook</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -52,16 +52,16 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
-<li class="active">
-    <a href="./">Lesson 1</a>
+<li >
+    <a href="../lesson1/">Lesson 1</a>
 </li>
                             
 <li >
     <a href="../lesson02/">Lesson 2</a>
 </li>
                             
-<li >
-    <a href="../lesson03/">Lesson 3</a>
+<li class="active">
+    <a href="./">Lesson 3</a>
 </li>
                             
 <li >
@@ -86,12 +86,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="..">
+                        <a rel="next" href="../lesson02/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../lesson02/">
+                        <a rel="prev" href="../lesson04/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -103,57 +103,95 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#lesson-1-xy-coordinate">Lesson 1: x,y coordinate</a></li>
-            <li><a href="#load-image">Load Image</a></li>
-            <li><a href="#blit-image-displays-image">Blit Image (Displays Image)</a></li>
-            <li><a href="#background-fill">Background Fill</a></li>
+        <li class="main active"><a href="#control">Control</a></li>
+            <li><a href="#switch-to-guffy">Switch to Guffy</a></li>
+            <li><a href="#move-guffy">Move Guffy</a></li>
+            <li><a href="#bounds-detection">Bounds detection</a></li>
+            <li><a href="#virtual-controller">Virtual Controller</a></li>
+            <li><a href="#change-guffy-direction-based-on-controller">Change Guffy Direction Based on Controller</a></li>
+        <li class="main "><a href="#answer">Answer</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="lesson-1-xy-coordinate">Lesson 1: x,y coordinate</h2>
-<p>Create this</p>
-<p><img alt="" src="../img/lesson-1-xy.png" /></p>
-<p>Using this code.</p>
-<pre><code>import pygame
-
-SIZE = (800, 600)
-
-DISPLAY = pygame.display.set_mode(SIZE)
-
-gameOn = True
+<h2 id="control">Control</h2>
+<ul>
+<li>Switch the cupcake to Guffy the giraffe</li>
+<li>Set up bounds detection</li>
+<li>Create virtual controller</li>
+<li>Change Guffy direction based on virtual controller</li>
+</ul>
+<p><img alt="" src="../img/guffyMove.png" /></p>
+<h3 id="switch-to-guffy">Switch to Guffy</h3>
+<p>Insert this above the main while loop.</p>
+<pre><code>giraffe = pygame.image.load('img/giraffe.png')
+giraffe_rect = pygame.Rect(0, 0, 64, 64)
+</code></pre>
+<p>The position of the giraffe needs to be specified by
+a rectangle to enable collision detection with 
+collideRect in the future.</p>
+<h3 id="move-guffy">Move Guffy</h3>
+<h4 id="what-is-the-main-while-loop">What is the main while loop?</h4>
+<p>This is the main while loop.</p>
+<pre><code>gameOn = True
 
 while gameOn:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            gameOn = False
-    pygame.display.update()
 </code></pre>
-<h3 id="load-image">Load Image</h3>
-<pre><code>donut = pygame.image.load('img/donut.png')
+<h4 id="initially-guffy-direction">Initially Guffy direction</h4>
+<p>Initially set Guffy's direction as down. Put this 
+above the main while loop.</p>
+<pre><code>direction = "down"
 </code></pre>
-<p>Notes: </p>
-<ul>
-<li>Load image above main while loop.</li>
-</ul>
-<h3 id="blit-image-displays-image">Blit Image (Displays Image)</h3>
-<pre><code>DISPLAY.blit(donut, (131, 465))
+<h4 id="guffy-moves-based-on-changing-the-direction-variable">Guffy moves based on changing the <code>direction</code> variable</h4>
+<p>This must be in the main while loop.</p>
+<pre><code>if direction == "down":
+    giraffe_rect.centery += speed
+elif direction == "up":
+    giraffe_rect.centery -= speed
+elif direction == "right":
+    giraffe_rect.centerx += speed
+elif direction == "left":
+    giraffe_rect.centerx -= speed
 </code></pre>
-<p>Notes: </p>
-<ul>
-<li>Must be in main while loop.</li>
-</ul>
-<h3 id="background-fill">Background Fill</h3>
-<pre><code>DISPLAY.fill(mint)
+<h3 id="bounds-detection">Bounds detection</h3>
+<p>This must be in the main while loop.</p>
+<pre><code>if giraffe_rect.bottom &gt; 600:
+    direction = "up"
+if giraffe_rect.top &lt; 0:
+    direction = "down"
+if giraffe_rect.left &lt; 0:
+    direction = "right"
+if giraffe_rect.right &gt; 800:
+    direction = "left"
 </code></pre>
-<p>Notes: </p>
-<ul>
-<li>must be above the images that are blitted to screen</li>
-<li>mint is a variable that is defined as rgb</li>
-</ul>
-<p>Example:</p>
-<pre><code>mint = (180,255,229)
-</code></pre></div>
+<h3 id="virtual-controller">Virtual Controller</h3>
+<p>Above the main while loop.</p>
+<pre><code>uarrow = pygame.image.load('img/arrows/up.png')
+uarrow_rect = pygame.Rect(610, 300, 55, 100)
+darrow = pygame.image.load('img/arrows/down.png')
+darrow_rect = pygame.Rect(610, 475, 55, 100)
+</code></pre>
+<p>Inside the main while loop.</p>
+<pre><code>DISPLAY.blit(larrow, larrow_rect)
+DISPLAY.blit(uarrow, uarrow_rect)
+</code></pre>
+<h3 id="change-guffy-direction-based-on-controller">Change Guffy Direction Based on Controller</h3>
+<p>Look for the event for loop. Use an <code>if</code> statement
+to check for a <code>pygame.MOUSEBUTTONDOWN event</code>.</p>
+<pre><code>for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+        gameOn = False
+    if event.type == pygame.MOUSEBUTTONDOWN:
+        mouse_pos = pygame.mouse.get_pos()
+        if uarrow_rect.collidepoint(mouse_pos):
+            direction = "up"
+        if darrow_rect.collidepoint(mouse_pos):
+            direction = "down"
+</code></pre>
+<h2 id="answer">Answer</h2>
+<p>There is a complete code example in the answers section.</p>
+<p>Prior to looking at the answer, review 
+<a href="https://www.youtube.com/playlist?list=PLxvyAnoL-vu5sNgzos6_v6nX-j8N4H-Pd">these videos</a> for tips.</p></div>
         </div>
 
         <footer class="col-md-12">

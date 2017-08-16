@@ -2,13 +2,13 @@
     "docs": [
         {
             "location": "/", 
-            "text": "PyChildren Guide\n\n\nTeaching Python to your own middle school kids.\n\n\nLearning Objectives\n\n\nLesson 1\n\n\n\n\ninfinite while loop\n\n\nx, y coordinate system\n\n\nvariable assignment\n\n\n\n\nLesson 2\n\n\n\n\nincrement (in while loop)", 
+            "text": "PyChildren Guide v2\n\n\nTeaching Python to your own middle school kids. Designed\nfor a 12 year old girl. These lessons are used with \n\nthese videos\n.\nThe videos are based on drills.\nThese lessons provide more explanation on theory, as\nrequested by my daughter.\n\n\nLearning Objectives\n\n\nLesson 1\n\n\n\n\ninfinite while loop\n\n\nx, y coordinate system\n\n\nvariable assignment\n\n\n\n\nLesson 2\n\n\n\n\nincrement (in while loop)\n\n\n\n\nLesson 3\n\n\n\n\nrepeat while loop\n\n\nevent loop (for loop)\n\n\nif statements\n\n\n\n\nLesson 4\n\n\nLesson 5", 
             "title": "Home"
         }, 
         {
-            "location": "/#pychildren-guide", 
-            "text": "Teaching Python to your own middle school kids.", 
-            "title": "PyChildren Guide"
+            "location": "/#pychildren-guide-v2", 
+            "text": "Teaching Python to your own middle school kids. Designed\nfor a 12 year old girl. These lessons are used with  these videos .\nThe videos are based on drills.\nThese lessons provide more explanation on theory, as\nrequested by my daughter.", 
+            "title": "PyChildren Guide v2"
         }, 
         {
             "location": "/#learning-objectives", 
@@ -24,6 +24,21 @@
             "location": "/#lesson-2", 
             "text": "increment (in while loop)", 
             "title": "Lesson 2"
+        }, 
+        {
+            "location": "/#lesson-3", 
+            "text": "repeat while loop  event loop (for loop)  if statements", 
+            "title": "Lesson 3"
+        }, 
+        {
+            "location": "/#lesson-4", 
+            "text": "", 
+            "title": "Lesson 4"
+        }, 
+        {
+            "location": "/#lesson-5", 
+            "text": "", 
+            "title": "Lesson 5"
         }, 
         {
             "location": "/lesson1/", 
@@ -76,14 +91,144 @@
             "title": "Extra Credit Quiz"
         }, 
         {
+            "location": "/lesson03/", 
+            "text": "Control\n\n\n\n\nSwitch the cupcake to Guffy the giraffe\n\n\nSet up bounds detection\n\n\nCreate virtual controller\n\n\nChange Guffy direction based on virtual controller\n\n\n\n\n\n\nSwitch to Guffy\n\n\nInsert this above the main while loop.\n\n\ngiraffe = pygame.image.load('img/giraffe.png')\ngiraffe_rect = pygame.Rect(0, 0, 64, 64)\n\n\n\nThe position of the giraffe needs to be specified by\na rectangle to enable collision detection with \ncollideRect in the future.\n\n\nMove Guffy\n\n\nWhat is the main while loop?\n\n\nThis is the main while loop.\n\n\ngameOn = True\n\nwhile gameOn:\n\n\n\nInitially Guffy direction\n\n\nInitially set Guffy's direction as down. Put this \nabove the main while loop.\n\n\ndirection = \"down\"\n\n\n\nGuffy moves based on changing the \ndirection\n variable\n\n\nThis must be in the main while loop.\n\n\nif direction == \"down\":\n    giraffe_rect.centery += speed\nelif direction == \"up\":\n    giraffe_rect.centery -= speed\nelif direction == \"right\":\n    giraffe_rect.centerx += speed\nelif direction == \"left\":\n    giraffe_rect.centerx -= speed\n\n\n\nBounds detection\n\n\nThis must be in the main while loop.\n\n\nif giraffe_rect.bottom \n 600:\n    direction = \"up\"\nif giraffe_rect.top \n 0:\n    direction = \"down\"\nif giraffe_rect.left \n 0:\n    direction = \"right\"\nif giraffe_rect.right \n 800:\n    direction = \"left\"\n\n\n\nVirtual Controller\n\n\nAbove the main while loop.\n\n\nuarrow = pygame.image.load('img/arrows/up.png')\nuarrow_rect = pygame.Rect(610, 300, 55, 100)\ndarrow = pygame.image.load('img/arrows/down.png')\ndarrow_rect = pygame.Rect(610, 475, 55, 100)\n\n\n\nInside the main while loop.\n\n\nDISPLAY.blit(larrow, larrow_rect)\nDISPLAY.blit(uarrow, uarrow_rect)\n\n\n\nChange Guffy Direction Based on Controller\n\n\nLook for the event for loop. Use an \nif\n statement\nto check for a \npygame.MOUSEBUTTONDOWN event\n.\n\n\nfor event in pygame.event.get():\n    if event.type == pygame.QUIT:\n        gameOn = False\n    if event.type == pygame.MOUSEBUTTONDOWN:\n        mouse_pos = pygame.mouse.get_pos()\n        if uarrow_rect.collidepoint(mouse_pos):\n            direction = \"up\"\n        if darrow_rect.collidepoint(mouse_pos):\n            direction = \"down\"\n\n\n\nAnswer\n\n\nThere is a complete code example in the answers section.\n\n\nPrior to looking at the answer, review \n\nthese videos\n for tips.", 
+            "title": "Lesson 3"
+        }, 
+        {
+            "location": "/lesson03/#control", 
+            "text": "Switch the cupcake to Guffy the giraffe  Set up bounds detection  Create virtual controller  Change Guffy direction based on virtual controller", 
+            "title": "Control"
+        }, 
+        {
+            "location": "/lesson03/#switch-to-guffy", 
+            "text": "Insert this above the main while loop.  giraffe = pygame.image.load('img/giraffe.png')\ngiraffe_rect = pygame.Rect(0, 0, 64, 64)  The position of the giraffe needs to be specified by\na rectangle to enable collision detection with \ncollideRect in the future.", 
+            "title": "Switch to Guffy"
+        }, 
+        {
+            "location": "/lesson03/#move-guffy", 
+            "text": "", 
+            "title": "Move Guffy"
+        }, 
+        {
+            "location": "/lesson03/#what-is-the-main-while-loop", 
+            "text": "This is the main while loop.  gameOn = True\n\nwhile gameOn:", 
+            "title": "What is the main while loop?"
+        }, 
+        {
+            "location": "/lesson03/#initially-guffy-direction", 
+            "text": "Initially set Guffy's direction as down. Put this \nabove the main while loop.  direction = \"down\"", 
+            "title": "Initially Guffy direction"
+        }, 
+        {
+            "location": "/lesson03/#guffy-moves-based-on-changing-the-direction-variable", 
+            "text": "This must be in the main while loop.  if direction == \"down\":\n    giraffe_rect.centery += speed\nelif direction == \"up\":\n    giraffe_rect.centery -= speed\nelif direction == \"right\":\n    giraffe_rect.centerx += speed\nelif direction == \"left\":\n    giraffe_rect.centerx -= speed", 
+            "title": "Guffy moves based on changing the direction variable"
+        }, 
+        {
+            "location": "/lesson03/#bounds-detection", 
+            "text": "This must be in the main while loop.  if giraffe_rect.bottom   600:\n    direction = \"up\"\nif giraffe_rect.top   0:\n    direction = \"down\"\nif giraffe_rect.left   0:\n    direction = \"right\"\nif giraffe_rect.right   800:\n    direction = \"left\"", 
+            "title": "Bounds detection"
+        }, 
+        {
+            "location": "/lesson03/#virtual-controller", 
+            "text": "Above the main while loop.  uarrow = pygame.image.load('img/arrows/up.png')\nuarrow_rect = pygame.Rect(610, 300, 55, 100)\ndarrow = pygame.image.load('img/arrows/down.png')\ndarrow_rect = pygame.Rect(610, 475, 55, 100)  Inside the main while loop.  DISPLAY.blit(larrow, larrow_rect)\nDISPLAY.blit(uarrow, uarrow_rect)", 
+            "title": "Virtual Controller"
+        }, 
+        {
+            "location": "/lesson03/#change-guffy-direction-based-on-controller", 
+            "text": "Look for the event for loop. Use an  if  statement\nto check for a  pygame.MOUSEBUTTONDOWN event .  for event in pygame.event.get():\n    if event.type == pygame.QUIT:\n        gameOn = False\n    if event.type == pygame.MOUSEBUTTONDOWN:\n        mouse_pos = pygame.mouse.get_pos()\n        if uarrow_rect.collidepoint(mouse_pos):\n            direction = \"up\"\n        if darrow_rect.collidepoint(mouse_pos):\n            direction = \"down\"", 
+            "title": "Change Guffy Direction Based on Controller"
+        }, 
+        {
+            "location": "/lesson03/#answer", 
+            "text": "There is a complete code example in the answers section.  Prior to looking at the answer, review  these videos  for tips.", 
+            "title": "Answer"
+        }, 
+        {
+            "location": "/lesson04/", 
+            "text": "Leo Chases Guffy\n\n\n\n\nAdd Leo the Lion\n\n\nChase algorithm\n\n\nAdd food \n\n\nChange Guffy speed based on food\n\n\n\n\n\n\nAdd Leo\n\n\nAbove while loop\n\n\nleo = pygame.image.load('img/leo-90.png')\n\n\n\nIn while loop\n\n\nDISPLAY.blit(leo, leor)\n\n\n\nLeo Chases Guffy\n\n\nThis is the x direction.\n\n\nif giraffe_rect.centerx \n leor.centerx:\n    leor.centerx -= 1\nelif giraffe_rect.centerx \n leor.centerx:\n    leor.centerx += 1\n\n\n\nSet up the y direction\n\n\nAdd food\n\n\nAbove while loop\n\n\nicecream = pygame.image.load('img/ice-cream.png')\nicecreamr = pygame.Rect(134, 300, 64, 64)\n\n\n\nIn while loop\n\n\nDISPLAY.blit(icecream, icecreamr)\n\n\n\nChange Guffy's Speed Based on Food Choices\n\n\nBased on Guffy's dietary choices, his speed will change.\nIf he eats a dessert, he will slow down.\n\n\nif giraffe_rect.colliderect(cupcaker):\n    speed = 1\n\n\n\nIf Guffy eats a fruit or vegetable, his speed increases.\n\n\nif giraffe_rect.colliderect(pear):\n    speed = 5\n\n\n\nAnswer\n\n\nFull code example in the \nanswers\n section.", 
+            "title": "Lesson 4"
+        }, 
+        {
+            "location": "/lesson04/#leo-chases-guffy", 
+            "text": "Add Leo the Lion  Chase algorithm  Add food   Change Guffy speed based on food", 
+            "title": "Leo Chases Guffy"
+        }, 
+        {
+            "location": "/lesson04/#add-leo", 
+            "text": "Above while loop  leo = pygame.image.load('img/leo-90.png')  In while loop  DISPLAY.blit(leo, leor)", 
+            "title": "Add Leo"
+        }, 
+        {
+            "location": "/lesson04/#leo-chases-guffy_1", 
+            "text": "This is the x direction.  if giraffe_rect.centerx   leor.centerx:\n    leor.centerx -= 1\nelif giraffe_rect.centerx   leor.centerx:\n    leor.centerx += 1  Set up the y direction", 
+            "title": "Leo Chases Guffy"
+        }, 
+        {
+            "location": "/lesson04/#add-food", 
+            "text": "Above while loop  icecream = pygame.image.load('img/ice-cream.png')\nicecreamr = pygame.Rect(134, 300, 64, 64)  In while loop  DISPLAY.blit(icecream, icecreamr)", 
+            "title": "Add food"
+        }, 
+        {
+            "location": "/lesson04/#change-guffys-speed-based-on-food-choices", 
+            "text": "Based on Guffy's dietary choices, his speed will change.\nIf he eats a dessert, he will slow down.  if giraffe_rect.colliderect(cupcaker):\n    speed = 1  If Guffy eats a fruit or vegetable, his speed increases.  if giraffe_rect.colliderect(pear):\n    speed = 5", 
+            "title": "Change Guffy's Speed Based on Food Choices"
+        }, 
+        {
+            "location": "/lesson04/#answer", 
+            "text": "Full code example in the  answers  section.", 
+            "title": "Answer"
+        }, 
+        {
+            "location": "/lesson05/", 
+            "text": "Add Timer\n\n\n\n\nText\n\n\nAbove while loop. Note download font from Internet if font is not already in the directory.\n\n\n## initialize fonts\ntimer_font = pygame.font.Font(\"font/animeace2_reg.ttf\", 16)\n\n\n\nIn while loop.\n\n\ntimer_surface = timer_font.render(\"Time : \" + \"17\", False, YELLOW)\nwindowSurface.blit(timer_surface, (0,0))\n\n\n\nTime\n\n\nSet starting time. Above while loop.\n\n\nstart_time = pygame.time.get_ticks()\n\n\n\nDocumentation\n\n\nCalculate current time inside of while loop.\n\n\ncurrent_time = pygame.time.get_ticks() - start_time\n\n\n\nConvert from millisecond to string\n\n\ntimer = current_time / 1000.0\n\n\n\nShow only first decimal place\n\n\ntimer = \"{0:.1f}\".format(timer)\n\n\n\nDocumentation\n\n\nDisplay Timer\n\n\ntimer_surface = timer_font.render(\"Time : \" + str(timer), False, YELLOW)\n\nwindowSurface.blit(timer_surface, (0,0))", 
+            "title": "Lesson 5"
+        }, 
+        {
+            "location": "/lesson05/#add-timer", 
+            "text": "", 
+            "title": "Add Timer"
+        }, 
+        {
+            "location": "/lesson05/#text", 
+            "text": "Above while loop. Note download font from Internet if font is not already in the directory.  ## initialize fonts\ntimer_font = pygame.font.Font(\"font/animeace2_reg.ttf\", 16)  In while loop.  timer_surface = timer_font.render(\"Time : \" + \"17\", False, YELLOW)\nwindowSurface.blit(timer_surface, (0,0))", 
+            "title": "Text"
+        }, 
+        {
+            "location": "/lesson05/#time", 
+            "text": "Set starting time. Above while loop.  start_time = pygame.time.get_ticks()  Documentation  Calculate current time inside of while loop.  current_time = pygame.time.get_ticks() - start_time", 
+            "title": "Time"
+        }, 
+        {
+            "location": "/lesson05/#convert-from-millisecond-to-string", 
+            "text": "timer = current_time / 1000.0  Show only first decimal place  timer = \"{0:.1f}\".format(timer)  Documentation", 
+            "title": "Convert from millisecond to string"
+        }, 
+        {
+            "location": "/lesson05/#display-timer", 
+            "text": "timer_surface = timer_font.render(\"Time : \" + str(timer), False, YELLOW)\n\nwindowSurface.blit(timer_surface, (0,0))", 
+            "title": "Display Timer"
+        }, 
+        {
             "location": "/answers/", 
-            "text": "Lesson 02\n\n\nExtra Credit: x += 1 is the shorthand for x = x + 1", 
+            "text": "Lesson 02\n\n\nExtra Credit: x += 1 is the shorthand for x = x + 1\n\n\nLesson 3 Complete Code Example\n\n\nimport pygame\n\npygame.init()\n\nFPS = 30\nclock = pygame.time.Clock()\n\nSIZE = (800, 600)\nDISPLAY = pygame.display.set_mode(SIZE)\n\nspeed = 8\nrightarrow = pygame.image.load(\"img/arrows/right.png\")\ngiraffe = pygame.image.load('img/giraffe.png')\ngiraffe_rect = pygame.Rect(0, 0, 64, 64)\nrightarrow = pygame.image.load('img/arrows/right.png')\nrightarrow_rect = pygame.Rect(680, 400, 100, 55)\nlarrow = pygame.image.load('img/arrows/left.png')\nlarrow_rect = pygame.Rect(500, 400, 100, 55)\nuarrow = pygame.image.load('img/arrows/up.png')\nuarrow_rect = pygame.Rect(610, 300, 55, 100)\ndarrow = pygame.image.load('img/arrows/down.png')\ndarrow_rect = pygame.Rect(610, 475, 55, 100)\n\n\nlavender = (230, 230, 250)\n\n\ndirection = \"down\"\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n        if event.type == pygame.MOUSEBUTTONDOWN:\n            mouse_pos = pygame.mouse.get_pos()\n            if uarrow_rect.collidepoint(mouse_pos):\n                direction = \"up\"\n            if darrow_rect.collidepoint(mouse_pos):\n                direction = \"down\"\n            if rightarrow_rect.collidepoint(mouse_pos):\n                direction = \"right\"\n            if larrow_rect.collidepoint(mouse_pos):\n                direction = \"left\"\n\n    DISPLAY.fill(lavender)\n    DISPLAY.blit(giraffe, giraffe_rect)\n    DISPLAY.blit(rightarrow, rightarrow_rect)\n    DISPLAY.blit(larrow, larrow_rect)\n    DISPLAY.blit(uarrow, uarrow_rect)\n    DISPLAY.blit(darrow, darrow_rect)\n\n    if direction == \"down\":\n        giraffe_rect.centery += speed\n    elif direction == \"up\":\n        giraffe_rect.centery -= speed\n    elif direction == \"right\":\n        giraffe_rect.centerx += speed\n    elif direction == \"left\":\n        giraffe_rect.centerx -= speed\n    if giraffe_rect.bottom \n 600:\n        direction = \"up\"\n    if giraffe_rect.top \n 0:\n        direction = \"down\"\n    if giraffe_rect.left \n 0:\n        direction = \"right\"\n    if giraffe_rect.right \n 800:\n        direction = \"left\"\n\n\n    clock.tick(FPS)\n    pygame.display.update()\n\n\n\nLesson 04 Full Code\n\n\nimport pygame\n\npygame.init()\n\nFPS = 30\nclock = pygame.time.Clock()\n\nSIZE = (800, 600)\nDISPLAY = pygame.display.set_mode(SIZE)\n\nspeed = 5\nrightarrow = pygame.image.load(\"img/arrows/right.png\")\ngiraffe = pygame.image.load('img/giraffe.png')\ngiraffe_rect = pygame.Rect(0, 0, 64, 64)\nrightarrow = pygame.image.load('img/arrows/right.png')\nrightarrow_rect = pygame.Rect(680, 400, 100, 55)\nlarrow = pygame.image.load('img/arrows/left.png')\nlarrow_rect = pygame.Rect(500, 400, 100, 55)\nuarrow = pygame.image.load('img/arrows/up.png')\nuarrow_rect = pygame.Rect(610, 300, 55, 100)\ndarrow = pygame.image.load('img/arrows/down.png')\ndarrow_rect = pygame.Rect(610, 475, 55, 100)\ncupcake = pygame.image.load('img/cupcake.png')\ncupcaker = pygame.Rect(434, 234, 64, 64)\npea = pygame.image.load('img/pea.png')\npear = pygame.Rect(234, 503, 64, 64)\nleo = pygame.image.load('img/leo-90.png')\nleor = pygame.Rect(254, 394, 64, 64)\npineapple = pygame.image.load('img/pineapple.png')\npineappler = pygame.Rect(700, 70, 64, 64)\ndonut = pygame.image.load('img/donut.png')\ndonutr = pygame.Rect(200, 80, 64, 64)\nicecream = pygame.image.load('img/ice-cream.png')\nicecreamr = pygame.Rect(134, 300, 64, 64)\npopsicle = pygame.image.load('img/popsicle.png')\npopsicler = pygame.Rect(650, 200, 64, 64)\n\nlavender = (230, 230, 250)\nRED = (255, 0, 0)\ngreen = (0, 255, 0)\n\n\ndirection = \"down\"\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n        if event.type == pygame.MOUSEBUTTONDOWN:\n            mouse_pos = pygame.mouse.get_pos()\n            if uarrow_rect.collidepoint(mouse_pos):\n                direction = \"up\"\n            if darrow_rect.collidepoint(mouse_pos):\n                direction = \"down\"\n            if rightarrow_rect.collidepoint(mouse_pos):\n                direction = \"right\"\n            if larrow_rect.collidepoint(mouse_pos):\n                direction = \"left\"\n\n    DISPLAY.fill(lavender)\n    DISPLAY.blit(giraffe, giraffe_rect)\n    DISPLAY.blit(rightarrow, rightarrow_rect)\n    DISPLAY.blit(larrow, larrow_rect)\n    DISPLAY.blit(uarrow, uarrow_rect)\n    DISPLAY.blit(darrow, darrow_rect)\n    DISPLAY.blit(cupcake, cupcaker)\n    DISPLAY.blit(pea, pear)\n    DISPLAY.blit(leo, leor)\n    DISPLAY.blit(pineapple, pineappler)\n    DISPLAY.blit(donut, donutr)\n    DISPLAY.blit(icecream, icecreamr)\n    DISPLAY.blit(popsicle, popsicler)\n\n    if direction == \"down\":\n        giraffe_rect.centery += speed\n    elif direction == \"up\":\n        giraffe_rect.centery -= speed\n    elif direction == \"right\":\n        giraffe_rect.centerx += speed\n    elif direction == \"left\":\n        giraffe_rect.centerx -= speed\n    if giraffe_rect.bottom \n 600:\n        direction = \"up\"\n    if giraffe_rect.top \n 0:\n        direction = \"down\"\n    if giraffe_rect.left \n 0:\n        direction = \"right\"\n    if giraffe_rect.right \n 800:\n        direction = \"left\"\n    if giraffe_rect.colliderect(cupcaker):\n        speed = 1\n    if giraffe_rect.colliderect(pear):\n        speed = 5\n    if giraffe_rect.colliderect(pineappler):\n        speed = 5\n    if giraffe_rect.colliderect(donutr):\n        speed = 1\n    if giraffe_rect.colliderect(icecreamr):\n        speed = 1\n    if giraffe_rect.colliderect(popsicler):\n        speed = 1\n    if giraffe_rect.centerx \n leor.centerx:\n        leor.centerx -= 1\n    elif giraffe_rect.centerx \n leor.centerx:\n        leor.centerx += 1\n    if giraffe_rect.centery \n leor.centery:\n        leor.centery -= 1\n    elif giraffe_rect.centery \n leor.centery:\n        leor.centery += 1\n    if giraffe_rect.colliderect(leor):\n        DISPLAY.fill(RED)\n\n\n    clock.tick(FPS)\n    pygame.display.update()", 
             "title": "Answers"
         }, 
         {
             "location": "/answers/#lesson-02", 
             "text": "Extra Credit: x += 1 is the shorthand for x = x + 1", 
             "title": "Lesson 02"
+        }, 
+        {
+            "location": "/answers/#lesson-3-complete-code-example", 
+            "text": "import pygame\n\npygame.init()\n\nFPS = 30\nclock = pygame.time.Clock()\n\nSIZE = (800, 600)\nDISPLAY = pygame.display.set_mode(SIZE)\n\nspeed = 8\nrightarrow = pygame.image.load(\"img/arrows/right.png\")\ngiraffe = pygame.image.load('img/giraffe.png')\ngiraffe_rect = pygame.Rect(0, 0, 64, 64)\nrightarrow = pygame.image.load('img/arrows/right.png')\nrightarrow_rect = pygame.Rect(680, 400, 100, 55)\nlarrow = pygame.image.load('img/arrows/left.png')\nlarrow_rect = pygame.Rect(500, 400, 100, 55)\nuarrow = pygame.image.load('img/arrows/up.png')\nuarrow_rect = pygame.Rect(610, 300, 55, 100)\ndarrow = pygame.image.load('img/arrows/down.png')\ndarrow_rect = pygame.Rect(610, 475, 55, 100)\n\n\nlavender = (230, 230, 250)\n\n\ndirection = \"down\"\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n        if event.type == pygame.MOUSEBUTTONDOWN:\n            mouse_pos = pygame.mouse.get_pos()\n            if uarrow_rect.collidepoint(mouse_pos):\n                direction = \"up\"\n            if darrow_rect.collidepoint(mouse_pos):\n                direction = \"down\"\n            if rightarrow_rect.collidepoint(mouse_pos):\n                direction = \"right\"\n            if larrow_rect.collidepoint(mouse_pos):\n                direction = \"left\"\n\n    DISPLAY.fill(lavender)\n    DISPLAY.blit(giraffe, giraffe_rect)\n    DISPLAY.blit(rightarrow, rightarrow_rect)\n    DISPLAY.blit(larrow, larrow_rect)\n    DISPLAY.blit(uarrow, uarrow_rect)\n    DISPLAY.blit(darrow, darrow_rect)\n\n    if direction == \"down\":\n        giraffe_rect.centery += speed\n    elif direction == \"up\":\n        giraffe_rect.centery -= speed\n    elif direction == \"right\":\n        giraffe_rect.centerx += speed\n    elif direction == \"left\":\n        giraffe_rect.centerx -= speed\n    if giraffe_rect.bottom   600:\n        direction = \"up\"\n    if giraffe_rect.top   0:\n        direction = \"down\"\n    if giraffe_rect.left   0:\n        direction = \"right\"\n    if giraffe_rect.right   800:\n        direction = \"left\"\n\n\n    clock.tick(FPS)\n    pygame.display.update()", 
+            "title": "Lesson 3 Complete Code Example"
+        }, 
+        {
+            "location": "/answers/#lesson-04-full-code", 
+            "text": "import pygame\n\npygame.init()\n\nFPS = 30\nclock = pygame.time.Clock()\n\nSIZE = (800, 600)\nDISPLAY = pygame.display.set_mode(SIZE)\n\nspeed = 5\nrightarrow = pygame.image.load(\"img/arrows/right.png\")\ngiraffe = pygame.image.load('img/giraffe.png')\ngiraffe_rect = pygame.Rect(0, 0, 64, 64)\nrightarrow = pygame.image.load('img/arrows/right.png')\nrightarrow_rect = pygame.Rect(680, 400, 100, 55)\nlarrow = pygame.image.load('img/arrows/left.png')\nlarrow_rect = pygame.Rect(500, 400, 100, 55)\nuarrow = pygame.image.load('img/arrows/up.png')\nuarrow_rect = pygame.Rect(610, 300, 55, 100)\ndarrow = pygame.image.load('img/arrows/down.png')\ndarrow_rect = pygame.Rect(610, 475, 55, 100)\ncupcake = pygame.image.load('img/cupcake.png')\ncupcaker = pygame.Rect(434, 234, 64, 64)\npea = pygame.image.load('img/pea.png')\npear = pygame.Rect(234, 503, 64, 64)\nleo = pygame.image.load('img/leo-90.png')\nleor = pygame.Rect(254, 394, 64, 64)\npineapple = pygame.image.load('img/pineapple.png')\npineappler = pygame.Rect(700, 70, 64, 64)\ndonut = pygame.image.load('img/donut.png')\ndonutr = pygame.Rect(200, 80, 64, 64)\nicecream = pygame.image.load('img/ice-cream.png')\nicecreamr = pygame.Rect(134, 300, 64, 64)\npopsicle = pygame.image.load('img/popsicle.png')\npopsicler = pygame.Rect(650, 200, 64, 64)\n\nlavender = (230, 230, 250)\nRED = (255, 0, 0)\ngreen = (0, 255, 0)\n\n\ndirection = \"down\"\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n        if event.type == pygame.MOUSEBUTTONDOWN:\n            mouse_pos = pygame.mouse.get_pos()\n            if uarrow_rect.collidepoint(mouse_pos):\n                direction = \"up\"\n            if darrow_rect.collidepoint(mouse_pos):\n                direction = \"down\"\n            if rightarrow_rect.collidepoint(mouse_pos):\n                direction = \"right\"\n            if larrow_rect.collidepoint(mouse_pos):\n                direction = \"left\"\n\n    DISPLAY.fill(lavender)\n    DISPLAY.blit(giraffe, giraffe_rect)\n    DISPLAY.blit(rightarrow, rightarrow_rect)\n    DISPLAY.blit(larrow, larrow_rect)\n    DISPLAY.blit(uarrow, uarrow_rect)\n    DISPLAY.blit(darrow, darrow_rect)\n    DISPLAY.blit(cupcake, cupcaker)\n    DISPLAY.blit(pea, pear)\n    DISPLAY.blit(leo, leor)\n    DISPLAY.blit(pineapple, pineappler)\n    DISPLAY.blit(donut, donutr)\n    DISPLAY.blit(icecream, icecreamr)\n    DISPLAY.blit(popsicle, popsicler)\n\n    if direction == \"down\":\n        giraffe_rect.centery += speed\n    elif direction == \"up\":\n        giraffe_rect.centery -= speed\n    elif direction == \"right\":\n        giraffe_rect.centerx += speed\n    elif direction == \"left\":\n        giraffe_rect.centerx -= speed\n    if giraffe_rect.bottom   600:\n        direction = \"up\"\n    if giraffe_rect.top   0:\n        direction = \"down\"\n    if giraffe_rect.left   0:\n        direction = \"right\"\n    if giraffe_rect.right   800:\n        direction = \"left\"\n    if giraffe_rect.colliderect(cupcaker):\n        speed = 1\n    if giraffe_rect.colliderect(pear):\n        speed = 5\n    if giraffe_rect.colliderect(pineappler):\n        speed = 5\n    if giraffe_rect.colliderect(donutr):\n        speed = 1\n    if giraffe_rect.colliderect(icecreamr):\n        speed = 1\n    if giraffe_rect.colliderect(popsicler):\n        speed = 1\n    if giraffe_rect.centerx   leor.centerx:\n        leor.centerx -= 1\n    elif giraffe_rect.centerx   leor.centerx:\n        leor.centerx += 1\n    if giraffe_rect.centery   leor.centery:\n        leor.centery -= 1\n    elif giraffe_rect.centery   leor.centery:\n        leor.centery += 1\n    if giraffe_rect.colliderect(leor):\n        DISPLAY.fill(RED)\n\n\n    clock.tick(FPS)\n    pygame.display.update()", 
+            "title": "Lesson 04 Full Code"
         }
     ]
 }

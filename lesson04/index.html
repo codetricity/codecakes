@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Lesson 1 - PyChildren Guidebook</title>
+        <title>Lesson 4 - PyChildren Guidebook</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -52,8 +52,8 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
-<li class="active">
-    <a href="./">Lesson 1</a>
+<li >
+    <a href="../lesson1/">Lesson 1</a>
 </li>
                             
 <li >
@@ -64,8 +64,8 @@
     <a href="../lesson03/">Lesson 3</a>
 </li>
                             
-<li >
-    <a href="../lesson04/">Lesson 4</a>
+<li class="active">
+    <a href="./">Lesson 4</a>
 </li>
                             
 <li >
@@ -86,12 +86,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="..">
+                        <a rel="next" href="../lesson03/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../lesson02/">
+                        <a rel="prev" href="../lesson05/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -103,57 +103,59 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#lesson-1-xy-coordinate">Lesson 1: x,y coordinate</a></li>
-            <li><a href="#load-image">Load Image</a></li>
-            <li><a href="#blit-image-displays-image">Blit Image (Displays Image)</a></li>
-            <li><a href="#background-fill">Background Fill</a></li>
+        <li class="main active"><a href="#leo-chases-guffy">Leo Chases Guffy</a></li>
+            <li><a href="#add-leo">Add Leo</a></li>
+            <li><a href="#leo-chases-guffy_1">Leo Chases Guffy</a></li>
+            <li><a href="#add-food">Add food</a></li>
+            <li><a href="#change-guffys-speed-based-on-food-choices">Change Guffy's Speed Based on Food Choices</a></li>
+        <li class="main "><a href="#answer">Answer</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="lesson-1-xy-coordinate">Lesson 1: x,y coordinate</h2>
-<p>Create this</p>
-<p><img alt="" src="../img/lesson-1-xy.png" /></p>
-<p>Using this code.</p>
-<pre><code>import pygame
-
-SIZE = (800, 600)
-
-DISPLAY = pygame.display.set_mode(SIZE)
-
-gameOn = True
-
-while gameOn:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            gameOn = False
-    pygame.display.update()
-</code></pre>
-<h3 id="load-image">Load Image</h3>
-<pre><code>donut = pygame.image.load('img/donut.png')
-</code></pre>
-<p>Notes: </p>
+<h2 id="leo-chases-guffy">Leo Chases Guffy</h2>
 <ul>
-<li>Load image above main while loop.</li>
+<li>Add Leo the Lion</li>
+<li>Chase algorithm</li>
+<li>Add food </li>
+<li>Change Guffy speed based on food</li>
 </ul>
-<h3 id="blit-image-displays-image">Blit Image (Displays Image)</h3>
-<pre><code>DISPLAY.blit(donut, (131, 465))
+<p><img alt="" src="../img/lesson04.png" /></p>
+<h3 id="add-leo">Add Leo</h3>
+<p>Above while loop</p>
+<pre><code>leo = pygame.image.load('img/leo-90.png')
 </code></pre>
-<p>Notes: </p>
-<ul>
-<li>Must be in main while loop.</li>
-</ul>
-<h3 id="background-fill">Background Fill</h3>
-<pre><code>DISPLAY.fill(mint)
+<p>In while loop</p>
+<pre><code>DISPLAY.blit(leo, leor)
 </code></pre>
-<p>Notes: </p>
-<ul>
-<li>must be above the images that are blitted to screen</li>
-<li>mint is a variable that is defined as rgb</li>
-</ul>
-<p>Example:</p>
-<pre><code>mint = (180,255,229)
-</code></pre></div>
+<h3 id="leo-chases-guffy_1">Leo Chases Guffy</h3>
+<p>This is the x direction.</p>
+<pre><code>if giraffe_rect.centerx &lt; leor.centerx:
+    leor.centerx -= 1
+elif giraffe_rect.centerx &gt; leor.centerx:
+    leor.centerx += 1
+</code></pre>
+<p>Set up the y direction</p>
+<h3 id="add-food">Add food</h3>
+<p>Above while loop</p>
+<pre><code>icecream = pygame.image.load('img/ice-cream.png')
+icecreamr = pygame.Rect(134, 300, 64, 64)
+</code></pre>
+<p>In while loop</p>
+<pre><code>DISPLAY.blit(icecream, icecreamr)
+</code></pre>
+<h3 id="change-guffys-speed-based-on-food-choices">Change Guffy's Speed Based on Food Choices</h3>
+<p>Based on Guffy's dietary choices, his speed will change.
+If he eats a dessert, he will slow down.</p>
+<pre><code>if giraffe_rect.colliderect(cupcaker):
+    speed = 1
+</code></pre>
+<p>If Guffy eats a fruit or vegetable, his speed increases.</p>
+<pre><code>if giraffe_rect.colliderect(pear):
+    speed = 5
+</code></pre>
+<h2 id="answer">Answer</h2>
+<p>Full code example in the <a href="../answers/">answers</a> section.</p></div>
         </div>
 
         <footer class="col-md-12">

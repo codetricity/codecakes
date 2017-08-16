@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Lesson 1 - PyChildren Guidebook</title>
+        <title>Lesson 5 - PyChildren Guidebook</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -52,8 +52,8 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
-<li class="active">
-    <a href="./">Lesson 1</a>
+<li >
+    <a href="../lesson1/">Lesson 1</a>
 </li>
                             
 <li >
@@ -68,8 +68,8 @@
     <a href="../lesson04/">Lesson 4</a>
 </li>
                             
-<li >
-    <a href="../lesson05/">Lesson 5</a>
+<li class="active">
+    <a href="./">Lesson 5</a>
 </li>
                             
 <li >
@@ -86,12 +86,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="..">
+                        <a rel="next" href="../lesson04/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../lesson02/">
+                        <a rel="prev" href="../answers/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -103,56 +103,43 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#lesson-1-xy-coordinate">Lesson 1: x,y coordinate</a></li>
-            <li><a href="#load-image">Load Image</a></li>
-            <li><a href="#blit-image-displays-image">Blit Image (Displays Image)</a></li>
-            <li><a href="#background-fill">Background Fill</a></li>
+        <li class="main active"><a href="#add-timer">Add Timer</a></li>
+            <li><a href="#text">Text</a></li>
+            <li><a href="#time">Time</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="lesson-1-xy-coordinate">Lesson 1: x,y coordinate</h2>
-<p>Create this</p>
-<p><img alt="" src="../img/lesson-1-xy.png" /></p>
-<p>Using this code.</p>
-<pre><code>import pygame
-
-SIZE = (800, 600)
-
-DISPLAY = pygame.display.set_mode(SIZE)
-
-gameOn = True
-
-while gameOn:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            gameOn = False
-    pygame.display.update()
+<h2 id="add-timer">Add Timer</h2>
+<p><img alt="" src="../img/lesson05.png" /></p>
+<h3 id="text">Text</h3>
+<p>Above while loop. Note download font from Internet if font is not already in the directory.</p>
+<pre><code>## initialize fonts
+timer_font = pygame.font.Font("font/animeace2_reg.ttf", 16)
 </code></pre>
-<h3 id="load-image">Load Image</h3>
-<pre><code>donut = pygame.image.load('img/donut.png')
+<p>In while loop.</p>
+<pre><code>timer_surface = timer_font.render("Time : " + "17", False, YELLOW)
+windowSurface.blit(timer_surface, (0,0))
 </code></pre>
-<p>Notes: </p>
-<ul>
-<li>Load image above main while loop.</li>
-</ul>
-<h3 id="blit-image-displays-image">Blit Image (Displays Image)</h3>
-<pre><code>DISPLAY.blit(donut, (131, 465))
+<h3 id="time">Time</h3>
+<p>Set starting time. Above while loop.</p>
+<pre><code>start_time = pygame.time.get_ticks()
 </code></pre>
-<p>Notes: </p>
-<ul>
-<li>Must be in main while loop.</li>
-</ul>
-<h3 id="background-fill">Background Fill</h3>
-<pre><code>DISPLAY.fill(mint)
+<p><a href="https://www.pygame.org/docs/ref/time.html">Documentation</a></p>
+<p>Calculate current time inside of while loop.</p>
+<pre><code>current_time = pygame.time.get_ticks() - start_time
 </code></pre>
-<p>Notes: </p>
-<ul>
-<li>must be above the images that are blitted to screen</li>
-<li>mint is a variable that is defined as rgb</li>
-</ul>
-<p>Example:</p>
-<pre><code>mint = (180,255,229)
+<h4 id="convert-from-millisecond-to-string">Convert from millisecond to string</h4>
+<pre><code>timer = current_time / 1000.0
+</code></pre>
+<p>Show only first decimal place</p>
+<pre><code>timer = "{0:.1f}".format(timer)
+</code></pre>
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-use-string-formatters-in-python-3">Documentation</a></p>
+<h4 id="display-timer">Display Timer</h4>
+<pre><code>timer_surface = timer_font.render("Time : " + str(timer), False, YELLOW)
+
+windowSurface.blit(timer_surface, (0,0))
 </code></pre></div>
         </div>
 
