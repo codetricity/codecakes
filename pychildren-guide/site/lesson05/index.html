@@ -105,6 +105,7 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#add-timer">Add Timer</a></li>
             <li><a href="#text">Text</a></li>
+            <li><a href="#text-example">Text Example</a></li>
             <li><a href="#time">Time</a></li>
     </ul>
 </div></div>
@@ -113,33 +114,131 @@
 <h2 id="add-timer">Add Timer</h2>
 <p><img alt="" src="../img/lesson05.png" /></p>
 <h3 id="text">Text</h3>
-<p>Above while loop. Note download font from Internet if font is not already in the directory.</p>
-<pre><code>## initialize fonts
-timer_font = pygame.font.Font("font/animeace2_reg.ttf", 16)
+<p>To use fonts, you need three steps:</p>
+<ol>
+<li>initialize fonts with pygame.font.Font(<em>font name</em>, <em>font size</em>)</li>
+<li>render font</li>
+<li>blit rendered font to screen</li>
+</ol>
+<p>Example</p>
+<pre><code>timer_font = pygame.font.Font("font/animeace2_reg.ttf", 16)
 </code></pre>
 <p>In while loop.</p>
 <pre><code>timer_surface = timer_font.render("Time : " + "17", False, YELLOW)
-windowSurface.blit(timer_surface, (0,0))
+DISPLAY.blit(timer_surface, (0,0))
+</code></pre>
+<h3 id="text-example">Text Example</h3>
+<pre><code>import pygame
+
+pygame.init()
+
+SIZE = (800, 600)
+
+DISPLAY = pygame.display.set_mode(SIZE)
+YELLOW = (255, 255, 128)
+
+timer_font = pygame.font.Font("font/animeace2_reg.ttf", 24)
+
+gameOn = True
+
+while gameOn:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            gameOn = False
+
+    timer_surface = timer_font.render("Caitlyn", True, YELLOW)
+    DISPLAY.blit(timer_surface, (0, 0))
+    pygame.display.update()
 </code></pre>
 <h3 id="time">Time</h3>
 <p>Set starting time. Above while loop.</p>
 <pre><code>start_time = pygame.time.get_ticks()
 </code></pre>
 <p><a href="https://www.pygame.org/docs/ref/time.html">Documentation</a></p>
-<p>Calculate current time inside of while loop.</p>
+<h4 id="example-use-of-get_ticks">Example use of <code>get_ticks()</code></h4>
+<pre><code>import pygame
+
+pygame.init()
+
+clock = pygame.time.Clock()
+
+SIZE = (800, 600)
+
+DISPLAY = pygame.display.set_mode(SIZE)
+
+gameOn = True
+
+while gameOn:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            gameOn = False
+    print(pygame.time.get_ticks())
+    pygame.display.update()
+</code></pre>
+<h4 id="calculate-current-time-inside-of-while-loop">Calculate current time inside of while loop</h4>
 <pre><code>current_time = pygame.time.get_ticks() - start_time
+</code></pre>
+<h4 id="example-of-current-time">Example of Current Time</h4>
+<pre><code>import pygame
+
+pygame.init()
+
+clock = pygame.time.Clock()
+
+SIZE = (800, 600)
+
+DISPLAY = pygame.display.set_mode(SIZE)
+
+start_time = pygame.time.get_ticks()
+
+gameOn = True
+
+while gameOn:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            gameOn = False
+    current_time = pygame.time.get_ticks() - start_time
+    print(current_time)
+    pygame.display.update()
 </code></pre>
 <h4 id="convert-from-millisecond-to-string">Convert from millisecond to string</h4>
 <pre><code>timer = current_time / 1000.0
 </code></pre>
-<p>Show only first decimal place</p>
+<h4 id="example-of-getting-time-in-seconds">Example of getting time in seconds</h4>
+<pre><code>import pygame
+
+pygame.init()
+
+clock = pygame.time.Clock()
+
+SIZE = (800, 600)
+
+DISPLAY = pygame.display.set_mode(SIZE)
+
+start_time = pygame.time.get_ticks()
+
+gameOn = True
+
+while gameOn:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            gameOn = False
+    current_time = pygame.time.get_ticks() - start_time
+    timer = current_time / 1000.0
+    print(timer)
+    pygame.display.update()
+</code></pre>
+<p>This will display elapsed time with too many decimal places.</p>
+<p><img alt="" src="../img/timer.png" /></p>
+<h4 id="show-only-first-decimal-place">Show only first decimal place</h4>
 <pre><code>timer = "{0:.1f}".format(timer)
 </code></pre>
+<p><img alt="" src="../img/timer2.png" /></p>
 <p><a href="https://www.digitalocean.com/community/tutorials/how-to-use-string-formatters-in-python-3">Documentation</a></p>
 <h4 id="display-timer">Display Timer</h4>
 <pre><code>timer_surface = timer_font.render("Time : " + str(timer), False, YELLOW)
 
-windowSurface.blit(timer_surface, (0,0))
+DISPLAY.blit(timer_surface, (0,0))
 </code></pre></div>
         </div>
 

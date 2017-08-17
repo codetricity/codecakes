@@ -152,5 +152,7 @@ This will display elapsed time with too many decimal places.
         
     DISPLAY.blit(timer_surface, (0,0))
 
+Remember to blank out the screen each cycle before you blit elements.
 
 
+![](img/timerDisplay.gif)
