@@ -182,7 +182,7 @@
         }, 
         {
             "location": "/lesson05/", 
-            "text": "Add Timer\n\n\n\n\nText\n\n\nAbove while loop. Note download font from Internet if font is not already in the directory.\n\n\n## initialize fonts\ntimer_font = pygame.font.Font(\"font/animeace2_reg.ttf\", 16)\n\n\n\nIn while loop.\n\n\ntimer_surface = timer_font.render(\"Time : \" + \"17\", False, YELLOW)\nwindowSurface.blit(timer_surface, (0,0))\n\n\n\nTime\n\n\nSet starting time. Above while loop.\n\n\nstart_time = pygame.time.get_ticks()\n\n\n\nDocumentation\n\n\nCalculate current time inside of while loop.\n\n\ncurrent_time = pygame.time.get_ticks() - start_time\n\n\n\nConvert from millisecond to string\n\n\ntimer = current_time / 1000.0\n\n\n\nShow only first decimal place\n\n\ntimer = \"{0:.1f}\".format(timer)\n\n\n\nDocumentation\n\n\nDisplay Timer\n\n\ntimer_surface = timer_font.render(\"Time : \" + str(timer), False, YELLOW)\n\nwindowSurface.blit(timer_surface, (0,0))", 
+            "text": "Add Timer\n\n\n\n\nText\n\n\nTo use fonts, you need three steps:\n\n\n\n\ninitialize fonts with pygame.font.Font(\nfont name\n, \nfont size\n)\n\n\nrender font\n\n\nblit rendered font to screen\n\n\n\n\nExample\n\n\ntimer_font = pygame.font.Font(\"font/animeace2_reg.ttf\", 16)\n\n\n\nIn while loop.\n\n\ntimer_surface = timer_font.render(\"Time : \" + \"17\", False, YELLOW)\nDISPLAY.blit(timer_surface, (0,0))\n\n\n\nText Example\n\n\nimport pygame\n\npygame.init()\n\nSIZE = (800, 600)\n\nDISPLAY = pygame.display.set_mode(SIZE)\nYELLOW = (255, 255, 128)\n\ntimer_font = pygame.font.Font(\"font/animeace2_reg.ttf\", 24)\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n\n    timer_surface = timer_font.render(\"Caitlyn\", True, YELLOW)\n    DISPLAY.blit(timer_surface, (0, 0))\n    pygame.display.update()\n\n\n\nTime\n\n\nSet starting time. Above while loop.\n\n\nstart_time = pygame.time.get_ticks()\n\n\n\nDocumentation\n\n\nExample use of \nget_ticks()\n\n\nimport pygame\n\npygame.init()\n\nclock = pygame.time.Clock()\n\nSIZE = (800, 600)\n\nDISPLAY = pygame.display.set_mode(SIZE)\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n    print(pygame.time.get_ticks())\n    pygame.display.update()\n\n\n\nCalculate current time inside of while loop\n\n\ncurrent_time = pygame.time.get_ticks() - start_time\n\n\n\nExample of Current Time\n\n\nimport pygame\n\npygame.init()\n\nclock = pygame.time.Clock()\n\nSIZE = (800, 600)\n\nDISPLAY = pygame.display.set_mode(SIZE)\n\nstart_time = pygame.time.get_ticks()\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n    current_time = pygame.time.get_ticks() - start_time\n    print(current_time)\n    pygame.display.update()\n\n\n\nConvert from millisecond to string\n\n\ntimer = current_time / 1000.0\n\n\n\nExample of getting time in seconds\n\n\nimport pygame\n\npygame.init()\n\nclock = pygame.time.Clock()\n\nSIZE = (800, 600)\n\nDISPLAY = pygame.display.set_mode(SIZE)\n\nstart_time = pygame.time.get_ticks()\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n    current_time = pygame.time.get_ticks() - start_time\n    timer = current_time / 1000.0\n    print(timer)\n    pygame.display.update()\n\n\n\nThis will display elapsed time with too many decimal places.\n\n\n\n\nShow only first decimal place\n\n\ntimer = \"{0:.1f}\".format(timer)\n\n\n\n\n\nDocumentation\n\n\nDisplay Timer\n\n\ntimer_surface = timer_font.render(\"Time : \" + str(timer), False, YELLOW)\n\nDISPLAY.blit(timer_surface, (0,0))", 
             "title": "Lesson 5"
         }, 
         {
@@ -192,22 +192,52 @@
         }, 
         {
             "location": "/lesson05/#text", 
-            "text": "Above while loop. Note download font from Internet if font is not already in the directory.  ## initialize fonts\ntimer_font = pygame.font.Font(\"font/animeace2_reg.ttf\", 16)  In while loop.  timer_surface = timer_font.render(\"Time : \" + \"17\", False, YELLOW)\nwindowSurface.blit(timer_surface, (0,0))", 
+            "text": "To use fonts, you need three steps:   initialize fonts with pygame.font.Font( font name ,  font size )  render font  blit rendered font to screen   Example  timer_font = pygame.font.Font(\"font/animeace2_reg.ttf\", 16)  In while loop.  timer_surface = timer_font.render(\"Time : \" + \"17\", False, YELLOW)\nDISPLAY.blit(timer_surface, (0,0))", 
             "title": "Text"
         }, 
         {
+            "location": "/lesson05/#text-example", 
+            "text": "import pygame\n\npygame.init()\n\nSIZE = (800, 600)\n\nDISPLAY = pygame.display.set_mode(SIZE)\nYELLOW = (255, 255, 128)\n\ntimer_font = pygame.font.Font(\"font/animeace2_reg.ttf\", 24)\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n\n    timer_surface = timer_font.render(\"Caitlyn\", True, YELLOW)\n    DISPLAY.blit(timer_surface, (0, 0))\n    pygame.display.update()", 
+            "title": "Text Example"
+        }, 
+        {
             "location": "/lesson05/#time", 
-            "text": "Set starting time. Above while loop.  start_time = pygame.time.get_ticks()  Documentation  Calculate current time inside of while loop.  current_time = pygame.time.get_ticks() - start_time", 
+            "text": "Set starting time. Above while loop.  start_time = pygame.time.get_ticks()  Documentation", 
             "title": "Time"
         }, 
         {
+            "location": "/lesson05/#example-use-of-get_ticks", 
+            "text": "import pygame\n\npygame.init()\n\nclock = pygame.time.Clock()\n\nSIZE = (800, 600)\n\nDISPLAY = pygame.display.set_mode(SIZE)\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n    print(pygame.time.get_ticks())\n    pygame.display.update()", 
+            "title": "Example use of get_ticks()"
+        }, 
+        {
+            "location": "/lesson05/#calculate-current-time-inside-of-while-loop", 
+            "text": "current_time = pygame.time.get_ticks() - start_time", 
+            "title": "Calculate current time inside of while loop"
+        }, 
+        {
+            "location": "/lesson05/#example-of-current-time", 
+            "text": "import pygame\n\npygame.init()\n\nclock = pygame.time.Clock()\n\nSIZE = (800, 600)\n\nDISPLAY = pygame.display.set_mode(SIZE)\n\nstart_time = pygame.time.get_ticks()\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n    current_time = pygame.time.get_ticks() - start_time\n    print(current_time)\n    pygame.display.update()", 
+            "title": "Example of Current Time"
+        }, 
+        {
             "location": "/lesson05/#convert-from-millisecond-to-string", 
-            "text": "timer = current_time / 1000.0  Show only first decimal place  timer = \"{0:.1f}\".format(timer)  Documentation", 
+            "text": "timer = current_time / 1000.0", 
             "title": "Convert from millisecond to string"
         }, 
         {
+            "location": "/lesson05/#example-of-getting-time-in-seconds", 
+            "text": "import pygame\n\npygame.init()\n\nclock = pygame.time.Clock()\n\nSIZE = (800, 600)\n\nDISPLAY = pygame.display.set_mode(SIZE)\n\nstart_time = pygame.time.get_ticks()\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n    current_time = pygame.time.get_ticks() - start_time\n    timer = current_time / 1000.0\n    print(timer)\n    pygame.display.update()  This will display elapsed time with too many decimal places.", 
+            "title": "Example of getting time in seconds"
+        }, 
+        {
+            "location": "/lesson05/#show-only-first-decimal-place", 
+            "text": "timer = \"{0:.1f}\".format(timer)   Documentation", 
+            "title": "Show only first decimal place"
+        }, 
+        {
             "location": "/lesson05/#display-timer", 
-            "text": "timer_surface = timer_font.render(\"Time : \" + str(timer), False, YELLOW)\n\nwindowSurface.blit(timer_surface, (0,0))", 
+            "text": "timer_surface = timer_font.render(\"Time : \" + str(timer), False, YELLOW)\n\nDISPLAY.blit(timer_surface, (0,0))", 
             "title": "Display Timer"
         }, 
         {
