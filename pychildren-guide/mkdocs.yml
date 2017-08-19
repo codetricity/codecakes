@@ -7,5 +7,6 @@ pages:
       - Lesson 2: lesson02.md
       - Lesson 3: lesson03.md
       - Lesson 4: lesson04.md
-      - Lesson 5: lesson05.md
+      - Text to Screen: text.md
+      - Timer: timer.md
       - Answers: answers.md

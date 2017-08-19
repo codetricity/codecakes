@@ -27,4 +27,6 @@ requested by my daughter.
 
 ### [Lesson 4](lesson04.md)
 
-### [Lesson 5](lesson05.md)
+### [Text to Screen](text.md)
+
+### [Timer](timer.md)
