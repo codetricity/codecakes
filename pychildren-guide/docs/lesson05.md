@@ -2,12 +2,12 @@
 
 ![](img/lesson05.png)
 
-### Text
+### Display Text on Screen
 
 To use fonts, you need three steps:
 
-1. initialize fonts with pygame.font.Font(*font name*, *font size*)
-2. render font
+1. assign a variable to `pygame.font.Font`(*font name*, *font size*)
+2. render font and assign it to variable_surface
 3. blit rendered font to screen
 
 Example
@@ -16,7 +16,7 @@ Example
 
 In while loop.
 
-    timer_surface = timer_font.render("Time : " + "17", False, YELLOW)
+    timer_surface = timer_font.render("Time: ", False, YELLOW)
     DISPLAY.blit(timer_surface, (0,0))
 
 
@@ -46,109 +46,99 @@ In while loop.
 
 ### Time
 
-Set starting time. Above while loop.
-
-    start_time = pygame.time.get_ticks()
-
-[Documentation](https://www.pygame.org/docs/ref/time.html)
+You can get the time elapsed since the game was started 
+with `pygame.time.get_ticks()`
 
 #### Example use of `get_ticks()`
 
-    import pygame
+The example below does not bring up the the pygame window. It will only output text to the terminal. You must start your program from the terminal, not from the play button.
 
+
+    import pygame
     pygame.init()
 
-    clock = pygame.time.Clock()
-
-    SIZE = (800, 600)
-
-    DISPLAY = pygame.display.set_mode(SIZE)
-
-    gameOn = True
-
-    while gameOn:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                gameOn = False
+    while True:
         print(pygame.time.get_ticks())
-        pygame.display.update()
 
 
-#### Calculate current time inside of while loop
+![](img/timer/pythonTimer.png)
 
-    current_time = pygame.time.get_ticks() - start_time
+![](img/timer/noPlay.png)
 
-#### Example of Current Time
+To stop the program, press CTRL-c.
 
-    import pygame
+![](img/timer/milli.png)
 
-    pygame.init()
+#### Convert from millisecond to seconds
 
-    clock = pygame.time.Clock()
+`pygame.time.get_ticks()` will return 
+a long number with a lot of digits. To make the number
+shorter, divide it by 1000.0
 
-    SIZE = (800, 600)
-
-    DISPLAY = pygame.display.set_mode(SIZE)
-
-    start_time = pygame.time.get_ticks()
-
-    gameOn = True
-
-    while gameOn:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                gameOn = False
-        current_time = pygame.time.get_ticks() - start_time
-        print(current_time)
-        pygame.display.update()
-
-#### Convert from millisecond to string
-
-    timer = current_time / 1000.0
+    timer_number = pygame.time.get_ticks() / 1000.0
 
 #### Example of getting time in seconds
 
     import pygame
-
     pygame.init()
 
-    clock = pygame.time.Clock()
-
-    SIZE = (800, 600)
-
-    DISPLAY = pygame.display.set_mode(SIZE)
-
-    start_time = pygame.time.get_ticks()
-
-    gameOn = True
-
-    while gameOn:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                gameOn = False
-        current_time = pygame.time.get_ticks() - start_time
-        timer = current_time / 1000.0
-        print(timer)
-        pygame.display.update()
+    while True:
+        print(pygame.time.get_ticks()/1000.0)
 
 This will display elapsed time with too many decimal places.
 
 ![](img/timer.png)
 
 #### Show only first decimal place
-        
-    timer = "{0:.1f}".format(timer)
+
+First, assign timer to a variable.
+
+    import pygame
+    pygame.init()
+
+    while True:
+        timer_number = pygame.time.get_ticks() / 1000.0
+        print(timer_number)
+
+![](img/timer/timer_number.png)
+
+You now need to round it the time to only one decimal place. 
+Use the new python command `round`*(number, decimal places)*.
+
+    import pygame
+    pygame.init()
+
+    while True:
+        timer_number = pygame.time.get_ticks() / 1000.0
+        timer_one_decimal = round(timer_number, 1)
+        print(timer_one_decimal)
 
 
-![](img/timer2.png)
 
+![](img/timer/one_decimal.png)
 
-[Documentation](https://www.digitalocean.com/community/tutorials/how-to-use-string-formatters-in-python-3)
+Before you can blit the time to the screen, you will need 
+to convert the number into a string.
 
+    timer_string = str(timer_one_decimal)
+
+The complete code you need to get a string for the elapsed time with one 
+decimal place is shown below.
+
+    import pygame
+    pygame.init()
+
+    while True:
+        timer_number = pygame.time.get_ticks() / 1000.0
+        timer_one_decimal = round(timer_number, 1)
+        print(timer_one_decimal)
 
 #### Display Timer
 
-    timer_surface = timer_font.render("Time : " + str(timer), False, YELLOW)
+You can now combine the pygame window that had the time with the 
+timer string code.
+
+    timer_surface = timer_font.render("Time : " + timer_string, True, YELLOW)
         
     DISPLAY.blit(timer_surface, (0,0))
 

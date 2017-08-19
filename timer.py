@@ -1,18 +1,8 @@
 import pygame
-
 pygame.init()
 
-clock = pygame.time.Clock()
-
-SIZE = (800, 600)
-
-DISPLAY = pygame.display.set_mode(SIZE)
-
-gameOn = True
-
-while gameOn:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            gameOn = False
-    print(pygame.time.get_ticks())
-    pygame.display.update()
+while True:
+    timer_number = pygame.time.get_ticks() / 1000.0
+    timer_one_decimal = round(timer_number, 1)
+    timer_string = str(timer_one_decimal)
+    print(timer_string)
