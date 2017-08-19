@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Lesson 5 - PyChildren Guidebook</title>
+        <title>Timer - PyChildren Guidebook</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -68,8 +68,12 @@
     <a href="../lesson04/">Lesson 4</a>
 </li>
                             
+<li >
+    <a href="../text/">Text to Screen</a>
+</li>
+                            
 <li class="active">
-    <a href="./">Lesson 5</a>
+    <a href="./">Timer</a>
 </li>
                             
 <li >
@@ -86,7 +90,7 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../lesson04/">
+                        <a rel="next" href="../text/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
@@ -103,57 +107,26 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#add-timer">Add Timer</a></li>
-            <li><a href="#display-text-on-screen">Display Text on Screen</a></li>
-            <li><a href="#text-example">Text Example</a></li>
-            <li><a href="#time">Time</a></li>
+        <li class="main active"><a href="#time">Time</a></li>
+            <li><a href="#calculate-elaposed-time">Calculate Elaposed time</a></li>
+            <li><a href="#convert-from-millisecond-to-seconds">Convert from millisecond to seconds</a></li>
+            <li><a href="#show-only-first-decimal-place">Show only first decimal place</a></li>
+            <li><a href="#convert-number-to-string">Convert Number to String</a></li>
+            <li><a href="#display-timer">Display Timer</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="add-timer">Add Timer</h2>
-<p><img alt="" src="../img/lesson05.png" /></p>
-<h3 id="display-text-on-screen">Display Text on Screen</h3>
-<p>To use fonts, you need three steps:</p>
-<ol>
-<li>assign a variable to <code>pygame.font.Font</code>(<em>font name</em>, <em>font size</em>)</li>
-<li>render font and assign it to variable_surface</li>
-<li>blit rendered font to screen</li>
-</ol>
-<p>Example</p>
-<pre><code>timer_font = pygame.font.Font("font/animeace2_reg.ttf", 16)
-</code></pre>
-<p>In while loop.</p>
-<pre><code>timer_surface = timer_font.render("Time: ", False, YELLOW)
-DISPLAY.blit(timer_surface, (0,0))
-</code></pre>
-<h3 id="text-example">Text Example</h3>
-<pre><code>import pygame
-
-pygame.init()
-
-SIZE = (800, 600)
-
-DISPLAY = pygame.display.set_mode(SIZE)
-YELLOW = (255, 255, 128)
-
-timer_font = pygame.font.Font("font/animeace2_reg.ttf", 24)
-
-gameOn = True
-
-while gameOn:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            gameOn = False
-
-    timer_surface = timer_font.render("Caitlyn", True, YELLOW)
-    DISPLAY.blit(timer_surface, (0, 0))
-    pygame.display.update()
-</code></pre>
-<h3 id="time">Time</h3>
+<h2 id="time">Time</h2>
+<ul>
+<li>calculate time elapsed since game started with <code>pygame.time.get_ticks()</code>. This must be in the main while loop</li>
+<li>Convert elapsed time from milliseconds to seconds by diving by 1000.0</li>
+<li>Make number shorter by using <code>round()</code></li>
+<li>Convert number to string with <code>str()</code></li>
+</ul>
+<h3 id="calculate-elaposed-time">Calculate Elaposed time</h3>
 <p>You can get the time elapsed since the game was started 
 with <code>pygame.time.get_ticks()</code></p>
-<h4 id="example-use-of-get_ticks">Example use of <code>get_ticks()</code></h4>
 <p>The example below does not bring up the the pygame window. It will only output text to the terminal. You must start your program from the terminal, not from the play button.</p>
 <pre><code>import pygame
 pygame.init()
@@ -161,17 +134,20 @@ pygame.init()
 while True:
     print(pygame.time.get_ticks())
 </code></pre>
+<p>Run the python program from the terminal.</p>
 <p><img alt="" src="../img/timer/pythonTimer.png" /></p>
+<p>Do not press the play button.</p>
 <p><img alt="" src="../img/timer/noPlay.png" /></p>
 <p>To stop the program, press CTRL-c.</p>
 <p><img alt="" src="../img/timer/milli.png" /></p>
-<h4 id="convert-from-millisecond-to-seconds">Convert from millisecond to seconds</h4>
+<h3 id="convert-from-millisecond-to-seconds">Convert from millisecond to seconds</h3>
 <p><code>pygame.time.get_ticks()</code> will return 
-a long number with a lot of digits. To make the number
-shorter, divide it by 1000.0</p>
+a long number with a lot of digits. To covert 
+the milliseconds to seconds, divide the
+number by 1000.0</p>
 <pre><code>timer_number = pygame.time.get_ticks() / 1000.0
 </code></pre>
-<h4 id="example-of-getting-time-in-seconds">Example of getting time in seconds</h4>
+<p><strong>Example</strong></p>
 <pre><code>import pygame
 pygame.init()
 
@@ -180,7 +156,7 @@ while True:
 </code></pre>
 <p>This will display elapsed time with too many decimal places.</p>
 <p><img alt="" src="../img/timer.png" /></p>
-<h4 id="show-only-first-decimal-place">Show only first decimal place</h4>
+<h3 id="show-only-first-decimal-place">Show only first decimal place</h3>
 <p>First, assign timer to a variable.</p>
 <pre><code>import pygame
 pygame.init()
@@ -201,6 +177,7 @@ while True:
     print(timer_one_decimal)
 </code></pre>
 <p><img alt="" src="../img/timer/one_decimal.png" /></p>
+<h3 id="convert-number-to-string">Convert Number to String</h3>
 <p>Before you can blit the time to the screen, you will need 
 to convert the number into a string.</p>
 <pre><code>timer_string = str(timer_one_decimal)
@@ -215,9 +192,10 @@ while True:
     timer_one_decimal = round(timer_number, 1)
     print(timer_one_decimal)
 </code></pre>
-<h4 id="display-timer">Display Timer</h4>
-<p>You can now combine the pygame window that had the time with the 
-timer string code.</p>
+<h3 id="display-timer">Display Timer</h3>
+<p>You can now combine the previous lesson that showed
+you how to display text on the screen with the 
+timer string code in this lesson.</p>
 <pre><code>timer_surface = timer_font.render("Time : " + timer_string, True, YELLOW)
 
 DISPLAY.blit(timer_surface, (0,0))

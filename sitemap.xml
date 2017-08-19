@@ -36,7 +36,13 @@
     </url>
         
     <url>
-     <loc>/lesson05/</loc>
+     <loc>/text/</loc>
+     <lastmod>2017-08-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/timer/</loc>
      <lastmod>2017-08-18</lastmod>
      <changefreq>daily</changefreq>
     </url>

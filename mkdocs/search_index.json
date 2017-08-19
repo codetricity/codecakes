@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "PyChildren Guide v2\n\n\nTeaching Python to your own middle school kids. Designed\nfor a 12 year old girl. These lessons are used with \n\nthese videos\n.\nThe videos are based on drills.\nThese lessons provide more explanation on theory, as\nrequested by my daughter.\n\n\nLearning Objectives\n\n\nLesson 1\n\n\n\n\ninfinite while loop\n\n\nx, y coordinate system\n\n\nvariable assignment\n\n\n\n\nLesson 2\n\n\n\n\nincrement (in while loop)\n\n\n\n\nLesson 3\n\n\n\n\nrepeat while loop\n\n\nevent loop (for loop)\n\n\nif statements\n\n\n\n\nLesson 4\n\n\nLesson 5",
+            "text": "PyChildren Guide v2\n\n\nTeaching Python to your own middle school kids. Designed\nfor a 12 year old girl. These lessons are used with \n\nthese videos\n.\nThe videos are based on drills.\nThese lessons provide more explanation on theory, as\nrequested by my daughter.\n\n\nLearning Objectives\n\n\nLesson 1\n\n\n\n\ninfinite while loop\n\n\nx, y coordinate system\n\n\nvariable assignment\n\n\n\n\nLesson 2\n\n\n\n\nincrement (in while loop)\n\n\n\n\nLesson 3\n\n\n\n\nrepeat while loop\n\n\nevent loop (for loop)\n\n\nif statements\n\n\n\n\nLesson 4\n\n\nText to Screen\n\n\nTimer",
             "title": "Home"
         },
         {
@@ -36,9 +36,14 @@
             "title": "Lesson 4"
         },
         {
-            "location": "/#lesson-5",
+            "location": "/#text-to-screen",
             "text": "",
-            "title": "Lesson 5"
+            "title": "Text to Screen"
+        },
+        {
+            "location": "/#timer",
+            "text": "",
+            "title": "Timer"
         },
         {
             "location": "/lesson1/",
@@ -181,53 +186,53 @@
             "title": "Answer"
         },
         {
-            "location": "/lesson05/",
-            "text": "Add Timer\n\n\n\n\nDisplay Text on Screen\n\n\nTo use fonts, you need three steps:\n\n\n\n\nassign a variable to \npygame.font.Font\n(\nfont name\n, \nfont size\n)\n\n\nrender font and assign it to variable_surface\n\n\nblit rendered font to screen\n\n\n\n\nExample\n\n\ntimer_font = pygame.font.Font(\"font/animeace2_reg.ttf\", 16)\n\n\n\nIn while loop.\n\n\ntimer_surface = timer_font.render(\"Time: \", False, YELLOW)\nDISPLAY.blit(timer_surface, (0,0))\n\n\n\nText Example\n\n\nimport pygame\n\npygame.init()\n\nSIZE = (800, 600)\n\nDISPLAY = pygame.display.set_mode(SIZE)\nYELLOW = (255, 255, 128)\n\ntimer_font = pygame.font.Font(\"font/animeace2_reg.ttf\", 24)\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n\n    timer_surface = timer_font.render(\"Caitlyn\", True, YELLOW)\n    DISPLAY.blit(timer_surface, (0, 0))\n    pygame.display.update()\n\n\n\nTime\n\n\nYou can get the time elapsed since the game was started \nwith \npygame.time.get_ticks()\n\n\nExample use of \nget_ticks()\n\n\nThe example below does not bring up the the pygame window. It will only output text to the terminal. You must start your program from the terminal, not from the play button.\n\n\nimport pygame\npygame.init()\n\nwhile True:\n    print(pygame.time.get_ticks())\n\n\n\n\n\n\n\nTo stop the program, press CTRL-c.\n\n\n\n\nConvert from millisecond to seconds\n\n\npygame.time.get_ticks()\n will return \na long number with a lot of digits. To make the number\nshorter, divide it by 1000.0\n\n\ntimer_number = pygame.time.get_ticks() / 1000.0\n\n\n\nExample of getting time in seconds\n\n\nimport pygame\npygame.init()\n\nwhile True:\n    print(pygame.time.get_ticks()/1000.0)\n\n\n\nThis will display elapsed time with too many decimal places.\n\n\n\n\nShow only first decimal place\n\n\nFirst, assign timer to a variable.\n\n\nimport pygame\npygame.init()\n\nwhile True:\n    timer_number = pygame.time.get_ticks() / 1000.0\n    print(timer_number)\n\n\n\n\n\nYou now need to round it the time to only one decimal place. \nUse the new python command \nround\n(number, decimal places)\n.\n\n\nimport pygame\npygame.init()\n\nwhile True:\n    timer_number = pygame.time.get_ticks() / 1000.0\n    timer_one_decimal = round(timer_number, 1)\n    print(timer_one_decimal)\n\n\n\n\n\nBefore you can blit the time to the screen, you will need \nto convert the number into a string.\n\n\ntimer_string = str(timer_one_decimal)\n\n\n\nThe complete code you need to get a string for the elapsed time with one \ndecimal place is shown below.\n\n\nimport pygame\npygame.init()\n\nwhile True:\n    timer_number = pygame.time.get_ticks() / 1000.0\n    timer_one_decimal = round(timer_number, 1)\n    print(timer_one_decimal)\n\n\n\nDisplay Timer\n\n\nYou can now combine the pygame window that had the time with the \ntimer string code.\n\n\ntimer_surface = timer_font.render(\"Time : \" + timer_string, True, YELLOW)\n\nDISPLAY.blit(timer_surface, (0,0))\n\n\n\nRemember to blank out the screen each cycle before you blit elements.",
-            "title": "Lesson 5"
+            "location": "/text/",
+            "text": "Display Text on Screen\n\n\n\nTo use fonts, you need three steps:\n\n\n\n\nassign a variable to \npygame.font.Font\n(\nfont name\n, \nfont size\n)\n\n\nrender font and assign it to variable_surface\n\n\nblit rendered font to screen\n\n\n\n\nExample\n\n\ntimer_font = pygame.font.Font(\"font/animeace2_reg.ttf\", 16)\n\n\n\nIn while loop.\n\n\ntimer_surface = timer_font.render(\"Time: \", False, YELLOW)\nDISPLAY.blit(timer_surface, (0,0))\n\n\n\nText Example\n\n\nimport pygame\n\npygame.init()\n\nSIZE = (800, 600)\n\nDISPLAY = pygame.display.set_mode(SIZE)\nYELLOW = (255, 255, 128)\n\ntimer_font = pygame.font.Font(\"font/animeace2_reg.ttf\", 24)\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n\n    timer_surface = timer_font.render(\"Caitlyn\", True, YELLOW)\n    DISPLAY.blit(timer_surface, (0, 0))\n    pygame.display.update()",
+            "title": "Text to Screen"
         },
         {
-            "location": "/lesson05/#add-timer",
-            "text": "",
-            "title": "Add Timer"
-        },
-        {
-            "location": "/lesson05/#display-text-on-screen",
+            "location": "/text/#display-text-on-screen",
             "text": "To use fonts, you need three steps:   assign a variable to  pygame.font.Font ( font name ,  font size )  render font and assign it to variable_surface  blit rendered font to screen   Example  timer_font = pygame.font.Font(\"font/animeace2_reg.ttf\", 16)  In while loop.  timer_surface = timer_font.render(\"Time: \", False, YELLOW)\nDISPLAY.blit(timer_surface, (0,0))",
             "title": "Display Text on Screen"
         },
         {
-            "location": "/lesson05/#text-example",
+            "location": "/text/#text-example",
             "text": "import pygame\n\npygame.init()\n\nSIZE = (800, 600)\n\nDISPLAY = pygame.display.set_mode(SIZE)\nYELLOW = (255, 255, 128)\n\ntimer_font = pygame.font.Font(\"font/animeace2_reg.ttf\", 24)\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n\n    timer_surface = timer_font.render(\"Caitlyn\", True, YELLOW)\n    DISPLAY.blit(timer_surface, (0, 0))\n    pygame.display.update()",
             "title": "Text Example"
         },
         {
-            "location": "/lesson05/#time",
-            "text": "You can get the time elapsed since the game was started \nwith  pygame.time.get_ticks()",
+            "location": "/timer/",
+            "text": "Time\n\n\n\n\ncalculate time elapsed since game started with \npygame.time.get_ticks()\n. This must be in the main while loop\n\n\nConvert elapsed time from milliseconds to seconds by diving by 1000.0\n\n\nMake number shorter by using \nround()\n\n\nConvert number to string with \nstr()\n\n\n\n\nCalculate Elaposed time\n\n\nYou can get the time elapsed since the game was started \nwith \npygame.time.get_ticks()\n\n\nThe example below does not bring up the the pygame window. It will only output text to the terminal. You must start your program from the terminal, not from the play button.\n\n\nimport pygame\npygame.init()\n\nwhile True:\n    print(pygame.time.get_ticks())\n\n\n\nRun the python program from the terminal.\n\n\n\n\nDo not press the play button.\n\n\n\n\nTo stop the program, press CTRL-c.\n\n\n\n\nConvert from millisecond to seconds\n\n\npygame.time.get_ticks()\n will return \na long number with a lot of digits. To covert \nthe milliseconds to seconds, divide the\nnumber by 1000.0\n\n\ntimer_number = pygame.time.get_ticks() / 1000.0\n\n\n\nExample\n\n\nimport pygame\npygame.init()\n\nwhile True:\n    print(pygame.time.get_ticks()/1000.0)\n\n\n\nThis will display elapsed time with too many decimal places.\n\n\n\n\nShow only first decimal place\n\n\nFirst, assign timer to a variable.\n\n\nimport pygame\npygame.init()\n\nwhile True:\n    timer_number = pygame.time.get_ticks() / 1000.0\n    print(timer_number)\n\n\n\n\n\nYou now need to round it the time to only one decimal place. \nUse the new python command \nround\n(number, decimal places)\n.\n\n\nimport pygame\npygame.init()\n\nwhile True:\n    timer_number = pygame.time.get_ticks() / 1000.0\n    timer_one_decimal = round(timer_number, 1)\n    print(timer_one_decimal)\n\n\n\n\n\nConvert Number to String\n\n\nBefore you can blit the time to the screen, you will need \nto convert the number into a string.\n\n\ntimer_string = str(timer_one_decimal)\n\n\n\nThe complete code you need to get a string for the elapsed time with one \ndecimal place is shown below.\n\n\nimport pygame\npygame.init()\n\nwhile True:\n    timer_number = pygame.time.get_ticks() / 1000.0\n    timer_one_decimal = round(timer_number, 1)\n    print(timer_one_decimal)\n\n\n\nDisplay Timer\n\n\nYou can now combine the previous lesson that showed\nyou how to display text on the screen with the \ntimer string code in this lesson.\n\n\ntimer_surface = timer_font.render(\"Time : \" + timer_string, True, YELLOW)\n\nDISPLAY.blit(timer_surface, (0,0))\n\n\n\nRemember to blank out the screen each cycle before you blit elements.",
+            "title": "Timer"
+        },
+        {
+            "location": "/timer/#time",
+            "text": "calculate time elapsed since game started with  pygame.time.get_ticks() . This must be in the main while loop  Convert elapsed time from milliseconds to seconds by diving by 1000.0  Make number shorter by using  round()  Convert number to string with  str()",
             "title": "Time"
         },
         {
-            "location": "/lesson05/#example-use-of-get_ticks",
-            "text": "The example below does not bring up the the pygame window. It will only output text to the terminal. You must start your program from the terminal, not from the play button.  import pygame\npygame.init()\n\nwhile True:\n    print(pygame.time.get_ticks())    To stop the program, press CTRL-c.",
-            "title": "Example use of get_ticks()"
+            "location": "/timer/#calculate-elaposed-time",
+            "text": "You can get the time elapsed since the game was started \nwith  pygame.time.get_ticks()  The example below does not bring up the the pygame window. It will only output text to the terminal. You must start your program from the terminal, not from the play button.  import pygame\npygame.init()\n\nwhile True:\n    print(pygame.time.get_ticks())  Run the python program from the terminal.   Do not press the play button.   To stop the program, press CTRL-c.",
+            "title": "Calculate Elaposed time"
         },
         {
-            "location": "/lesson05/#convert-from-millisecond-to-seconds",
-            "text": "pygame.time.get_ticks()  will return \na long number with a lot of digits. To make the number\nshorter, divide it by 1000.0  timer_number = pygame.time.get_ticks() / 1000.0",
+            "location": "/timer/#convert-from-millisecond-to-seconds",
+            "text": "pygame.time.get_ticks()  will return \na long number with a lot of digits. To covert \nthe milliseconds to seconds, divide the\nnumber by 1000.0  timer_number = pygame.time.get_ticks() / 1000.0  Example  import pygame\npygame.init()\n\nwhile True:\n    print(pygame.time.get_ticks()/1000.0)  This will display elapsed time with too many decimal places.",
             "title": "Convert from millisecond to seconds"
         },
         {
-            "location": "/lesson05/#example-of-getting-time-in-seconds",
-            "text": "import pygame\npygame.init()\n\nwhile True:\n    print(pygame.time.get_ticks()/1000.0)  This will display elapsed time with too many decimal places.",
-            "title": "Example of getting time in seconds"
-        },
-        {
-            "location": "/lesson05/#show-only-first-decimal-place",
-            "text": "First, assign timer to a variable.  import pygame\npygame.init()\n\nwhile True:\n    timer_number = pygame.time.get_ticks() / 1000.0\n    print(timer_number)   You now need to round it the time to only one decimal place. \nUse the new python command  round (number, decimal places) .  import pygame\npygame.init()\n\nwhile True:\n    timer_number = pygame.time.get_ticks() / 1000.0\n    timer_one_decimal = round(timer_number, 1)\n    print(timer_one_decimal)   Before you can blit the time to the screen, you will need \nto convert the number into a string.  timer_string = str(timer_one_decimal)  The complete code you need to get a string for the elapsed time with one \ndecimal place is shown below.  import pygame\npygame.init()\n\nwhile True:\n    timer_number = pygame.time.get_ticks() / 1000.0\n    timer_one_decimal = round(timer_number, 1)\n    print(timer_one_decimal)",
+            "location": "/timer/#show-only-first-decimal-place",
+            "text": "First, assign timer to a variable.  import pygame\npygame.init()\n\nwhile True:\n    timer_number = pygame.time.get_ticks() / 1000.0\n    print(timer_number)   You now need to round it the time to only one decimal place. \nUse the new python command  round (number, decimal places) .  import pygame\npygame.init()\n\nwhile True:\n    timer_number = pygame.time.get_ticks() / 1000.0\n    timer_one_decimal = round(timer_number, 1)\n    print(timer_one_decimal)",
             "title": "Show only first decimal place"
         },
         {
-            "location": "/lesson05/#display-timer",
-            "text": "You can now combine the pygame window that had the time with the \ntimer string code.  timer_surface = timer_font.render(\"Time : \" + timer_string, True, YELLOW)\n\nDISPLAY.blit(timer_surface, (0,0))  Remember to blank out the screen each cycle before you blit elements.",
+            "location": "/timer/#convert-number-to-string",
+            "text": "Before you can blit the time to the screen, you will need \nto convert the number into a string.  timer_string = str(timer_one_decimal)  The complete code you need to get a string for the elapsed time with one \ndecimal place is shown below.  import pygame\npygame.init()\n\nwhile True:\n    timer_number = pygame.time.get_ticks() / 1000.0\n    timer_one_decimal = round(timer_number, 1)\n    print(timer_one_decimal)",
+            "title": "Convert Number to String"
+        },
+        {
+            "location": "/timer/#display-timer",
+            "text": "You can now combine the previous lesson that showed\nyou how to display text on the screen with the \ntimer string code in this lesson.  timer_surface = timer_font.render(\"Time : \" + timer_string, True, YELLOW)\n\nDISPLAY.blit(timer_surface, (0,0))  Remember to blank out the screen each cycle before you blit elements.",
             "title": "Display Timer"
         },
         {
