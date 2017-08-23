@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>4. Chase - PyChildren Guidebook</title>
+        <title>7. Level - PyChildren Guidebook</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -64,8 +64,8 @@
     <a href="../lesson03/">3. Control</a>
 </li>
                             
-<li class="active">
-    <a href="./">4. Chase</a>
+<li >
+    <a href="../lesson04/">4. Chase</a>
 </li>
                             
 <li >
@@ -76,8 +76,8 @@
     <a href="../timer/">6. Timer</a>
 </li>
                             
-<li >
-    <a href="../level/">7. Level</a>
+<li class="active">
+    <a href="./">7. Level</a>
 </li>
                             
 <li >
@@ -94,12 +94,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../lesson03/">
+                        <a rel="next" href="../timer/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../text/">
+                        <a rel="prev" href="../answers/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -111,59 +111,100 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#leo-chases-guffy">Leo Chases Guffy</a></li>
-            <li><a href="#add-leo">Add Leo</a></li>
-            <li><a href="#leo-chases-guffy_1">Leo Chases Guffy</a></li>
-            <li><a href="#add-food">Add food</a></li>
-            <li><a href="#change-guffys-speed-based-on-food-choices">Change Guffy's Speed Based on Food Choices</a></li>
-        <li class="main "><a href="#answer">Answer</a></li>
+        <li class="main active"><a href="#levels">Levels</a></li>
+            <li><a href="#create-start-screen">Create Start Screen</a></li>
+            <li><a href="#create-game-screen">Create Game Screen</a></li>
+            <li><a href="#set-up-level-0-for-start-screen">Set Up Level 0 for Start Screen</a></li>
+            <li><a href="#get-mouse-position-for-button-press">Get Mouse Position for Button Press</a></li>
+            <li><a href="#switch-from-level-0-to-level-1">Switch from level 0 to level 1</a></li>
+            <li><a href="#set-up-level-1-game-block">Set up level 1 game block</a></li>
+            <li><a href="#full-code">Full Code</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="leo-chases-guffy">Leo Chases Guffy</h2>
-<ul>
-<li>Add Leo the Lion</li>
-<li>Chase algorithm</li>
-<li>Add food </li>
-<li>Change Guffy speed based on food</li>
-</ul>
-<p><img alt="" src="../img/lesson04.png" /></p>
-<h3 id="add-leo">Add Leo</h3>
-<p>Above while loop</p>
-<pre><code>leo = pygame.image.load('img/leo-90.png')
+<h2 id="levels">Levels</h2>
+<p>Create two screens for your game.</p>
+<h3 id="create-start-screen">Create Start Screen</h3>
+<p>First, create a new game that looks like this.</p>
+<p><img alt="" src="../img/level/start-screen.png" /></p>
+<p>Partial code above while loop</p>
+<pre><code>PURPLE = (128, 0, 255)
+WHITE = (255, 255, 255)
+
+gameFont = pygame.font.Font('font/animeace2_ital.ttf', 48)
+startButton = gameFont.render("Start", True, PURPLE, WHITE)
+startRect = startButton.get_rect()
+startRect.center = DISPLAY.get_rect().center
 </code></pre>
-<p>In while loop</p>
-<pre><code>DISPLAY.blit(leo, leor)
+<h3 id="create-game-screen">Create Game Screen</h3>
+<p>Copy your file from the start screen and save it with a new file name.
+Modify the code so that your game looks like this.</p>
+<p><img alt="" src="../img/level/game-screen.png" /></p>
+<h3 id="set-up-level-0-for-start-screen">Set Up Level 0 for Start Screen</h3>
+<p>Above while loop.</p>
+<pre><code>level = 0
 </code></pre>
-<h3 id="leo-chases-guffy_1">Leo Chases Guffy</h3>
-<p>This is the x direction.</p>
-<pre><code>if giraffe_rect.centerx &lt; leor.centerx:
-    leor.centerx -= 1
-elif giraffe_rect.centerx &gt; leor.centerx:
-    leor.centerx += 1
+<p>Inside of while loop.</p>
+<pre><code>if level == 0:
+    DISPLAY.fill(PURPLE)
+    DISPLAY.blit(startButton, startRect)
 </code></pre>
-<p>Set up the y direction</p>
-<h3 id="add-food">Add food</h3>
-<p>Above while loop</p>
-<pre><code>icecream = pygame.image.load('img/ice-cream.png')
-icecreamr = pygame.Rect(134, 300, 64, 64)
+<h3 id="get-mouse-position-for-button-press">Get Mouse Position for Button Press</h3>
+<p>Inside of event loop (<code>for event</code>)</p>
+<pre><code>if event.type == pygame.MOUSEBUTTONDOWN:
+    mousePos = pygame.mouse.get_pos()
 </code></pre>
-<p>In while loop</p>
-<pre><code>DISPLAY.blit(icecream, icecreamr)
+<h3 id="switch-from-level-0-to-level-1">Switch from level 0 to level 1</h3>
+<p>Inside of level 0 block (<code>if level == 0:</code>)</p>
+<pre><code>if startRect.collidepoint(mousePos):
+    level = 1
 </code></pre>
-<h3 id="change-guffys-speed-based-on-food-choices">Change Guffy's Speed Based on Food Choices</h3>
-<p>Based on Guffy's dietary choices, his speed will change.
-If he eats a dessert, he will slow down.</p>
-<pre><code>if giraffe_rect.colliderect(cupcaker):
-    speed = 1
-</code></pre>
-<p>If Guffy eats a fruit or vegetable, his speed increases.</p>
-<pre><code>if giraffe_rect.colliderect(pear):
-    speed = 5
-</code></pre>
-<h2 id="answer">Answer</h2>
-<p>Full code example in the <a href="../answers/">answers</a> section.</p></div>
+<h3 id="set-up-level-1-game-block">Set up level 1 game block</h3>
+<p>Use <code>if level == 1:</code>.</p>
+<h3 id="full-code">Full Code</h3>
+<pre><code>import pygame
+
+pygame.init()
+
+SIZE = (800, 600)
+
+DISPLAY = pygame.display.set_mode(SIZE)
+
+PURPLE = (128, 0, 255)
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0, 0)
+
+gameFont = pygame.font.Font('font/animeace2_ital.ttf', 48)
+startButton = gameFont.render("Start", True, PURPLE, WHITE)
+startRect = startButton.get_rect()
+startRect.center = DISPLAY.get_rect().center
+
+guffy = pygame.image.load("img/giraffe.png")
+guffyRect = guffy.get_rect(center=(400, 300))
+
+mousePos = (0, 0)
+
+level = 0
+
+gameOn = True
+
+while gameOn:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            gameOn = False
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            mousePos = pygame.mouse.get_pos()
+    if level == 0:
+        DISPLAY.fill(PURPLE)
+        DISPLAY.blit(startButton, startRect)
+        if startRect.collidepoint(mousePos):
+            level = 1
+    elif level == 1:
+        DISPLAY.fill(BLACK)
+        DISPLAY.blit(guffy, guffyRect)
+    pygame.display.update()
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

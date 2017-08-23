@@ -48,6 +48,12 @@
     </url>
         
     <url>
+     <loc>/level/</loc>
+     <lastmod>2017-08-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/answers/</loc>
      <lastmod>2017-08-23</lastmod>
      <changefreq>daily</changefreq>
