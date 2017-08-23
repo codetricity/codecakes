@@ -28,6 +28,8 @@ Do not press the play button.
 
 To stop the program, press CTRL-c.
 
+> NOTE: if CTRL-C doesn't work, you may need run Python from a command prompt or bash shell
+
 ![](img/timer/milli.png)
 
 ### Convert from millisecond to seconds
@@ -95,7 +97,8 @@ decimal place is shown below.
     while True:
         timer_number = pygame.time.get_ticks() / 1000.0
         timer_one_decimal = round(timer_number, 1)
-        print(timer_one_decimal)
+        timer_string = str(timer_one_decimal)
+        print(timer_string)
 
 ### Display Timer
 
