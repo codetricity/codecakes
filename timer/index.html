@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Timer - PyChildren Guidebook</title>
+        <title>6. Timer - PyChildren Guidebook</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -53,27 +53,27 @@
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../lesson1/">Lesson 1</a>
+    <a href="../lesson1/">1. Image</a>
 </li>
                             
 <li >
-    <a href="../lesson02/">Lesson 2</a>
+    <a href="../lesson02/">2. Move</a>
 </li>
                             
 <li >
-    <a href="../lesson03/">Lesson 3</a>
+    <a href="../lesson03/">3. Control</a>
 </li>
                             
 <li >
-    <a href="../lesson04/">Lesson 4</a>
+    <a href="../lesson04/">4. Chase</a>
 </li>
                             
 <li >
-    <a href="../text/">Text to Screen</a>
+    <a href="../text/">5. Text</a>
 </li>
                             
 <li class="active">
-    <a href="./">Timer</a>
+    <a href="./">6. Timer</a>
 </li>
                             
 <li >
@@ -139,6 +139,9 @@ while True:
 <p>Do not press the play button.</p>
 <p><img alt="" src="../img/timer/noPlay.png" /></p>
 <p>To stop the program, press CTRL-c.</p>
+<blockquote>
+<p>NOTE: if CTRL-C doesn't work, you may need run Python from a command prompt or bash shell</p>
+</blockquote>
 <p><img alt="" src="../img/timer/milli.png" /></p>
 <h3 id="convert-from-millisecond-to-seconds">Convert from millisecond to seconds</h3>
 <p><code>pygame.time.get_ticks()</code> will return 
@@ -190,7 +193,8 @@ pygame.init()
 while True:
     timer_number = pygame.time.get_ticks() / 1000.0
     timer_one_decimal = round(timer_number, 1)
-    print(timer_one_decimal)
+    timer_string = str(timer_one_decimal)
+    print(timer_string)
 </code></pre>
 <h3 id="display-timer">Display Timer</h3>
 <p>You can now combine the previous lesson that showed
