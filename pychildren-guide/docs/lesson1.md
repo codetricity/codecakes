@@ -1,4 +1,7 @@
-## Lesson 1: x,y coordinate
+## Lesson 1: Image
+
+> **IMPORTANT:** Before going through PyChildren2, go through the videos in the 
+[original PyChildren](https://www.youtube.com/playlist?list=PLxvyAnoL-vu5sNgzos6_v6nX-j8N4H-Pd)
 
 Create this
 

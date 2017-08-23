@@ -6,27 +6,53 @@ The videos are based on drills.
 These lessons provide more explanation on theory, as
 requested by my daughter.
 
+You should go through the videos prior to attempting these lessons.
+
 ## Learning Objectives
 
-### [Lesson 1](lesson1.md)
+### [Lesson 1 - Image](lesson1.md)
+
+#### Challenge
+
+- Place 5 images on screen
+
+#### Learning Objectives
 
 - infinite while loop
 - x, y coordinate system
 - variable assignment
 
-### [Lesson 2](lesson02.md)
+### [Lesson 2 - Move](lesson02.md)
+
+#### Challenge
+
+- Place 1 image on screen and make it move automatically
+    - you do not need to build a controller
+    - as soon as the game starts, the character moves
+    - you do not need to implement bounds detection
+
+#### Learning Objectives
 
 - increment (in while loop)
+- bounds detection and handling
 
 
-### [Lesson 3](lesson03.md)
+### [Lesson 3 - Control](lesson03.md)
 
-- repeat while loop
+
+#### Challenge
+- Place 1 character on screen and make it move in all four directions
+- Set up bounds detection
+- build virtual controller using four images of arrows (right, left, up, down)
+- when a player clicks on each arrow, make the character (guffy) move in the proper direction
+
+#### Learning Objectives
+
 - event loop (for loop)
 - if statements
 
-### [Lesson 4](lesson04.md)
+### [Lesson 4 - Chase](lesson04.md)
 
-### [Text to Screen](text.md)
+### [Lesson 5 - Text](text.md)
 
-### [Timer](timer.md)
+### [Lesson 6 - Timer](timer.md)

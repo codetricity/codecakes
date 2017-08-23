@@ -3,10 +3,10 @@ site_name: PyChildren Guidebook
 pages:
     - Home: index.md
     - Lessons: 
-      - Lesson 1: lesson1.md
-      - Lesson 2: lesson02.md
-      - Lesson 3: lesson03.md
-      - Lesson 4: lesson04.md
-      - Text to Screen: text.md
-      - Timer: timer.md
+      - 1. Image: lesson1.md
+      - 2. Move: lesson02.md
+      - 3. Control: lesson03.md
+      - 4. Chase: lesson04.md
+      - 5. Text: text.md
+      - 6. Timer: timer.md
       - Answers: answers.md
