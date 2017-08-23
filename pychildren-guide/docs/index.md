@@ -56,3 +56,5 @@ You should go through the videos prior to attempting these lessons.
 ### [Lesson 5 - Text](text.md)
 
 ### [Lesson 6 - Timer](timer.md)
+
+### [Lesson 7 - Level](level.md)
