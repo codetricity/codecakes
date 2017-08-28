@@ -2,13 +2,13 @@
     "docs": [
         {
             "location": "/",
-            "text": "PyChildren Guide v2\n\n\nTeaching Python to your own middle school kids. Designed\nfor a 12 year old girl. These lessons are used with \n\nthese videos\n.\nThe videos are based on drills.\nThese lessons provide more explanation on theory, as\nrequested by my daughter.\n\n\nYou should go through the videos prior to attempting these lessons.\n\n\nLearning Objectives\n\n\nLesson 1 - Image\n\n\nChallenge\n\n\n\n\nPlace 5 images on screen\n\n\n\n\nLearning Objectives\n\n\n\n\ninfinite while loop\n\n\nx, y coordinate system\n\n\nvariable assignment\n\n\n\n\nLesson 2 - Move\n\n\nChallenge\n\n\n\n\nPlace 1 image on screen and make it move automatically\n\n\nyou do not need to build a controller\n\n\nas soon as the game starts, the character moves\n\n\nyou do not need to implement bounds detection\n\n\n\n\n\n\n\n\nLearning Objectives\n\n\n\n\nincrement (in while loop)\n\n\nbounds detection and handling\n\n\n\n\nLesson 3 - Control\n\n\nChallenge\n\n\n\n\nPlace 1 character on screen and make it move in all four directions\n\n\nSet up bounds detection\n\n\nbuild virtual controller using four images of arrows (right, left, up, down)\n\n\nwhen a player clicks on each arrow, make the character (guffy) move in the proper direction\n\n\n\n\nLearning Objectives\n\n\n\n\nevent loop (for loop)\n\n\nif statements\n\n\n\n\nLesson 4 - Chase\n\n\nLesson 5 - Text\n\n\nLesson 6 - Timer",
+            "text": "Caitlyn's Codecakes\n\n\nTeaching Python to your own middle school kids. Designed\nfor a 12 year old girl. These lessons are used with \n\nthese videos\n.\nThe videos are based on drills.\nThese lessons provide more explanation on theory, as\nrequested by my daughter.\n\n\nYou should go through the videos prior to attempting these lessons.\n\n\nLearning Objectives\n\n\nLesson 1 - Image\n\n\nChallenge\n\n\n\n\nPlace 5 images on screen\n\n\n\n\nLearning Objectives\n\n\n\n\ninfinite while loop\n\n\nx, y coordinate system\n\n\nvariable assignment\n\n\n\n\nLesson 2 - Move\n\n\nChallenge\n\n\n\n\nPlace 1 image on screen and make it move automatically\n\n\nyou do not need to build a controller\n\n\nas soon as the game starts, the character moves\n\n\nyou do not need to implement bounds detection\n\n\n\n\n\n\n\n\nLearning Objectives\n\n\n\n\nincrement (in while loop)\n\n\nbounds detection and handling\n\n\n\n\nLesson 3 - Control\n\n\nChallenge\n\n\n\n\nPlace 1 character on screen and make it move in all four directions\n\n\nSet up bounds detection\n\n\nbuild virtual controller using four images of arrows (right, left, up, down)\n\n\nwhen a player clicks on each arrow, make the character (guffy) move in the proper direction\n\n\n\n\nLearning Objectives\n\n\n\n\nevent loop (for loop)\n\n\nif statements\n\n\n\n\nLesson 4 - Chase\n\n\nLesson 5 - Text\n\n\nLesson 6 - Timer\n\n\nLesson 7 - Level",
             "title": "Home"
         },
         {
-            "location": "/#pychildren-guide-v2",
+            "location": "/#caitlyns-codecakes",
             "text": "Teaching Python to your own middle school kids. Designed\nfor a 12 year old girl. These lessons are used with  these videos .\nThe videos are based on drills.\nThese lessons provide more explanation on theory, as\nrequested by my daughter.  You should go through the videos prior to attempting these lessons.",
-            "title": "PyChildren Guide v2"
+            "title": "Caitlyn's Codecakes"
         },
         {
             "location": "/#learning-objectives",
@@ -74,6 +74,11 @@
             "location": "/#lesson-6-timer",
             "text": "",
             "title": "Lesson 6 - Timer"
+        },
+        {
+            "location": "/#lesson-7-level",
+            "text": "",
+            "title": "Lesson 7 - Level"
         },
         {
             "location": "/lesson1/",
@@ -264,6 +269,51 @@
             "location": "/timer/#display-timer",
             "text": "You can now combine the previous lesson that showed\nyou how to display text on the screen with the \ntimer string code in this lesson.  timer_surface = timer_font.render(\"Time : \" + timer_string, True, YELLOW)\n\nDISPLAY.blit(timer_surface, (0,0))  Remember to blank out the screen each cycle before you blit elements.",
             "title": "Display Timer"
+        },
+        {
+            "location": "/level/",
+            "text": "Levels\n\n\nCreate two screens for your game.\n\n\nCreate Start Screen\n\n\nFirst, create a new game that looks like this.\n\n\n\n\nPartial code above while loop\n\n\nPURPLE = (128, 0, 255)\nWHITE = (255, 255, 255)\n\ngameFont = pygame.font.Font('font/animeace2_ital.ttf', 48)\nstartButton = gameFont.render(\"Start\", True, PURPLE, WHITE)\nstartRect = startButton.get_rect()\nstartRect.center = DISPLAY.get_rect().center\n\n\n\nCreate Game Screen\n\n\nCopy your file from the start screen and save it with a new file name.\nModify the code so that your game looks like this.\n\n\n\n\nSet Up Level 0 for Start Screen\n\n\nAbove while loop.\n\n\nlevel = 0\n\n\n\nInside of while loop.\n\n\nif level == 0:\n    DISPLAY.fill(PURPLE)\n    DISPLAY.blit(startButton, startRect)\n\n\n\nGet Mouse Position for Button Press\n\n\nInside of event loop (\nfor event\n)\n\n\nif event.type == pygame.MOUSEBUTTONDOWN:\n    mousePos = pygame.mouse.get_pos()\n\n\n\nSwitch from level 0 to level 1\n\n\nInside of level 0 block (\nif level == 0:\n)\n\n\nif startRect.collidepoint(mousePos):\n    level = 1\n\n\n\nSet up level 1 game block\n\n\nUse \nif level == 1:\n.\n\n\nFull Code\n\n\nimport pygame\n\npygame.init()\n\nSIZE = (800, 600)\n\nDISPLAY = pygame.display.set_mode(SIZE)\n\nPURPLE = (128, 0, 255)\nWHITE = (255, 255, 255)\nBLACK = (0, 0, 0, 0)\n\ngameFont = pygame.font.Font('font/animeace2_ital.ttf', 48)\nstartButton = gameFont.render(\"Start\", True, PURPLE, WHITE)\nstartRect = startButton.get_rect()\nstartRect.center = DISPLAY.get_rect().center\n\nguffy = pygame.image.load(\"img/giraffe.png\")\nguffyRect = guffy.get_rect(center=(400, 300))\n\nmousePos = (0, 0)\n\nlevel = 0\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n        if event.type == pygame.MOUSEBUTTONDOWN:\n            mousePos = pygame.mouse.get_pos()\n    if level == 0:\n        DISPLAY.fill(PURPLE)\n        DISPLAY.blit(startButton, startRect)\n        if startRect.collidepoint(mousePos):\n            level = 1\n    elif level == 1:\n        DISPLAY.fill(BLACK)\n        DISPLAY.blit(guffy, guffyRect)\n    pygame.display.update()",
+            "title": "7. Level"
+        },
+        {
+            "location": "/level/#levels",
+            "text": "Create two screens for your game.",
+            "title": "Levels"
+        },
+        {
+            "location": "/level/#create-start-screen",
+            "text": "First, create a new game that looks like this.   Partial code above while loop  PURPLE = (128, 0, 255)\nWHITE = (255, 255, 255)\n\ngameFont = pygame.font.Font('font/animeace2_ital.ttf', 48)\nstartButton = gameFont.render(\"Start\", True, PURPLE, WHITE)\nstartRect = startButton.get_rect()\nstartRect.center = DISPLAY.get_rect().center",
+            "title": "Create Start Screen"
+        },
+        {
+            "location": "/level/#create-game-screen",
+            "text": "Copy your file from the start screen and save it with a new file name.\nModify the code so that your game looks like this.",
+            "title": "Create Game Screen"
+        },
+        {
+            "location": "/level/#set-up-level-0-for-start-screen",
+            "text": "Above while loop.  level = 0  Inside of while loop.  if level == 0:\n    DISPLAY.fill(PURPLE)\n    DISPLAY.blit(startButton, startRect)",
+            "title": "Set Up Level 0 for Start Screen"
+        },
+        {
+            "location": "/level/#get-mouse-position-for-button-press",
+            "text": "Inside of event loop ( for event )  if event.type == pygame.MOUSEBUTTONDOWN:\n    mousePos = pygame.mouse.get_pos()",
+            "title": "Get Mouse Position for Button Press"
+        },
+        {
+            "location": "/level/#switch-from-level-0-to-level-1",
+            "text": "Inside of level 0 block ( if level == 0: )  if startRect.collidepoint(mousePos):\n    level = 1",
+            "title": "Switch from level 0 to level 1"
+        },
+        {
+            "location": "/level/#set-up-level-1-game-block",
+            "text": "Use  if level == 1: .",
+            "title": "Set up level 1 game block"
+        },
+        {
+            "location": "/level/#full-code",
+            "text": "import pygame\n\npygame.init()\n\nSIZE = (800, 600)\n\nDISPLAY = pygame.display.set_mode(SIZE)\n\nPURPLE = (128, 0, 255)\nWHITE = (255, 255, 255)\nBLACK = (0, 0, 0, 0)\n\ngameFont = pygame.font.Font('font/animeace2_ital.ttf', 48)\nstartButton = gameFont.render(\"Start\", True, PURPLE, WHITE)\nstartRect = startButton.get_rect()\nstartRect.center = DISPLAY.get_rect().center\n\nguffy = pygame.image.load(\"img/giraffe.png\")\nguffyRect = guffy.get_rect(center=(400, 300))\n\nmousePos = (0, 0)\n\nlevel = 0\n\ngameOn = True\n\nwhile gameOn:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            gameOn = False\n        if event.type == pygame.MOUSEBUTTONDOWN:\n            mousePos = pygame.mouse.get_pos()\n    if level == 0:\n        DISPLAY.fill(PURPLE)\n        DISPLAY.blit(startButton, startRect)\n        if startRect.collidepoint(mousePos):\n            level = 1\n    elif level == 1:\n        DISPLAY.fill(BLACK)\n        DISPLAY.blit(guffy, guffyRect)\n    pygame.display.update()",
+            "title": "Full Code"
         },
         {
             "location": "/answers/",
