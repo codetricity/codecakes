@@ -1,4 +1,4 @@
-# PyChildren Guide v2
+# Caitlyn's Codecakes
 Teaching Python to your own middle school kids. Designed
 for a 12 year old girl. These lessons are used with 
 [these videos](https://www.youtube.com/playlist?list=PLxvyAnoL-vu5sNgzos6_v6nX-j8N4H-Pd).

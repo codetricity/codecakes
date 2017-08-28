@@ -1,4 +1,6 @@
-# pychildren2
-simplified template for middle school children. Fork this template and clone locally. 
+# Codecakes
+Simplified template for middle school children. Target audience is the father
+or mother of a 12-14 year old girl. 
+Fork this template and clone locally. 
 
-[Guide](https://codetricity.github.io/pychildren2/)
+[Guide](https://codetricity.github.io/codecakes/)
