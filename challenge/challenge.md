@@ -9,8 +9,9 @@ Print number of milliseconds elapsed since game started
 ![](img/milli.png)
 
   
-* Use `pygame.time.get_ticks()` 
-* use Python `print` statement in while loop
+* `pygame.init()`
+* `pygame.time.get_ticks()` 
+* Python `print` statement in while loop
 
 ---
 
@@ -18,7 +19,7 @@ Print number of milliseconds elapsed since game started
 
 ---
 
-
+<code>
 
 	    import pygame
 	    pygame.init()
@@ -26,6 +27,7 @@ Print number of milliseconds elapsed since game started
 	    while True:
 		    print(pygame.time.get_ticks())
 
+</code>
 
 ---
 
@@ -41,6 +43,7 @@ Convert from millisecond to seconds
 
 ---
 
+<code>
 
 	    import pygame
 	    pygame.init()
@@ -48,15 +51,17 @@ Convert from millisecond to seconds
 	    while True:
 		    print(pygame.time.get_ticks()/1000)
  
+ </code>
 
 ---
-
 
 ## Challenge
 
 Reduce floating point number to one decimal place.
 
 ![](img/one_decimal.png)
+
+* `round`
 
 ---
 
@@ -78,9 +83,33 @@ Reduce floating point number to one decimal place.
 
 ---
 
+## Challenge
 
+Convert time to string and assign to variable `timer_string`
 
+---
 
+## Challenge
 
+Put timer on screen
 
+![](img/timerDisplay.gif)
+
+---
+
+## Hint on next slide
+
+---
+
+<code>
+
+	timer_surface = timer_font.render("Time : " + timer_string, True, YELLOW)
+
+	DISPLAY.blit(timer_surface, (0,0))
+
+</code>
+
+---
+
+## Click Here for Next Challenge
 
