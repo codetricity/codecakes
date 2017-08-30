@@ -15,11 +15,12 @@ direction = "stop"
 gameon = True
 
 while gameon:
-    for event in pygame.event.get():
+    event_list = pygame.event.get()
+    for event in event_list:
         if event.type == pygame.QUIT:
             gameon = False
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            direction = controller.getDirection(direction)
+        
+    direction = controller.getDirection(direction, event_list)
     guffy_rect = move.onePixel(screen, direction, guffy_rect)
     screen.fill((0, 0, 0))
     screen.blit(guffy, guffy_rect)

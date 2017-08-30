@@ -21,15 +21,25 @@ def blit(screen):
     screen.blit(right, right_rect)
 
 
-def getDirection(direction):
-    mouse_pos = pygame.mouse.get_pos()
-
-    if up_rect.collidepoint(mouse_pos):
-        direction = "up"
-    elif down_rect.collidepoint(mouse_pos):
-        direction = "down"
-    elif right_rect.collidepoint(mouse_pos):
-        direction = "right"
-    elif left_rect.collidepoint(mouse_pos):
-        direction = "left"
+def getDirection(direction, event_list):
+    for event in event_list:
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            mouse_pos = pygame.mouse.get_pos()
+            if up_rect.collidepoint(mouse_pos):
+                direction = "up"
+            elif down_rect.collidepoint(mouse_pos):
+                direction = "down"
+            elif right_rect.collidepoint(mouse_pos):
+                direction = "right"
+            elif left_rect.collidepoint(mouse_pos):
+                direction = "left"
+        elif event.type == pygame.KEYDOWN:
+            if event.key in [pygame.K_RIGHT, pygame.K_d]:
+                direction = "right"
+            elif event.key in [pygame.K_LEFT, pygame.K_a]:
+                direction = "left"
+            elif event.key in [pygame.K_UP, pygame.K_w]:
+                direction = "up"
+            elif event.key in [pygame.K_DOWN, pygame.K_s]:
+                direction = "down"            
     return direction
