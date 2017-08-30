@@ -1,12 +1,15 @@
 import pygame
 import controller
+import move
 
 pygame.init()
 
 size = (800, 600)
-screen = pygame.display.set_mode((size))
+screen = pygame.display.set_mode(size)
 
-controller.blit(screen)
+guffy = pygame.image.load("assets/img/giraffe.png")
+guffy_rect = pygame.Rect(300, 200, 64, 64)
+
 direction = "stop"
 
 gameon = True
@@ -14,8 +17,11 @@ gameon = True
 while gameon:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quit()
+            gameon = False
         if event.type == pygame.MOUSEBUTTONDOWN:
             direction = controller.getDirection(direction)
-    print(direction)
+    guffy_rect = move.onePixel(screen, direction, guffy_rect)
+    screen.fill((0, 0, 0))
+    screen.blit(guffy, guffy_rect)
+    controller.blit(screen)
     pygame.display.update()
