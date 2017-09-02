@@ -11,3 +11,5 @@ pages:
       - 6. Timer: timer.md
       - 7. Level: level.md
       - Answers: answers.md
+    - Exercises:
+      - for loops: exercises/for.md
