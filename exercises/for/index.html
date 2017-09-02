@@ -7,14 +7,14 @@
         
         
         
-        <link rel="shortcut icon" href="../img/favicon.ico">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>4. Chase - Caitlyn's Codecakes Guidebook</title>
+	<title>for loops - Caitlyn's Codecakes Guidebook</title>
 
-        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -43,7 +43,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href="..">Caitlyn's Codecakes Guidebook</a>
+            <a class="navbar-brand" href="../..">Caitlyn's Codecakes Guidebook</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -54,60 +54,60 @@
                 
                 
                     <li >
-                        <a href="..">Home</a>
+                        <a href="../..">Home</a>
                     </li>
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../lesson1/">1. Image</a>
+    <a href="../../lesson1/">1. Image</a>
 </li>
 
                         
                             
 <li >
-    <a href="../lesson02/">2. Move</a>
+    <a href="../../lesson02/">2. Move</a>
 </li>
 
                         
                             
 <li >
-    <a href="../lesson03/">3. Control</a>
-</li>
-
-                        
-                            
-<li class="active">
-    <a href="./">4. Chase</a>
+    <a href="../../lesson03/">3. Control</a>
 </li>
 
                         
                             
 <li >
-    <a href="../text/">5. Text</a>
+    <a href="../../lesson04/">4. Chase</a>
 </li>
 
                         
                             
 <li >
-    <a href="../timer/">6. Timer</a>
+    <a href="../../text/">5. Text</a>
 </li>
 
                         
                             
 <li >
-    <a href="../level/">7. Level</a>
+    <a href="../../timer/">6. Timer</a>
 </li>
 
                         
                             
 <li >
-    <a href="../answers/">Answers</a>
+    <a href="../../level/">7. Level</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../answers/">Answers</a>
 </li>
 
                         
@@ -116,13 +116,13 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exercises <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
-<li >
-    <a href="../exercises/for/">for loops</a>
+<li class="active">
+    <a href="./">for loops</a>
 </li>
 
                         
@@ -141,12 +141,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../lesson03/">
+                        <a rel="next" href="../../answers/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li >
-                        <a rel="prev" href="../text/">
+                    <li class="disabled">
+                        <a rel="prev" >
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -162,67 +162,42 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#leo-chases-guffy">Leo Chases Guffy</a></li>
-        
-            <li><a href="#add-leo">Add Leo</a></li>
-        
-            <li><a href="#leo-chases-guffy_1">Leo Chases Guffy</a></li>
-        
-            <li><a href="#add-food">Add food</a></li>
-        
-            <li><a href="#change-guffys-speed-based-on-food-choices">Change Guffy's Speed Based on Food Choices</a></li>
-        
-    
-        <li class="main "><a href="#answer">Answer</a></li>
+        <li class="main active"><a href="#for-loops">for loops</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="leo-chases-guffy">Leo Chases Guffy</h2>
-<ul>
-<li>Add Leo the Lion</li>
-<li>Chase algorithm</li>
-<li>Add food </li>
-<li>Change Guffy speed based on food</li>
-</ul>
-<p><img alt="" src="../img/lesson04.png" /></p>
-<h3 id="add-leo">Add Leo</h3>
-<p>Above while loop</p>
-<pre><code>leo = pygame.image.load('img/leo-90.png')
+<h2 id="for-loops"><code>for</code> loops</h2>
+<p>Describe what will happen in the code below:</p>
+<pre><code>for number in range(0, 9):
+    print(number)
 </code></pre>
-<p>In while loop</p>
-<pre><code>DISPLAY.blit(leo, leor)
+<p>Try it.</p>
+<hr />
+<p>Describe what happens.</p>
+<pre><code>for animal in ['dog', 'cat', 'duck']:
+    print(animal)
 </code></pre>
-<h3 id="leo-chases-guffy_1">Leo Chases Guffy</h3>
-<p>This is the x direction.</p>
-<pre><code>if giraffe_rect.centerx &lt; leor.centerx:
-    leor.centerx -= 1
-elif giraffe_rect.centerx &gt; leor.centerx:
-    leor.centerx += 1
+<hr />
+<p>Describe what happens.</p>
+<pre><code>animals = ['mongoose', 'ox', 'coyote', 'mountain lion']
+
+for animal in animals:
+    print(animal)
 </code></pre>
-<p>Set up the y direction</p>
-<h3 id="add-food">Add food</h3>
-<p>Above while loop</p>
-<pre><code>icecream = pygame.image.load('img/ice-cream.png')
-icecreamr = pygame.Rect(134, 300, 64, 64)
-</code></pre>
-<p>In while loop</p>
-<pre><code>DISPLAY.blit(icecream, icecreamr)
-</code></pre>
-<h3 id="change-guffys-speed-based-on-food-choices">Change Guffy's Speed Based on Food Choices</h3>
-<p>Based on Guffy's dietary choices, his speed will change.
-If he eats a dessert, he will slow down.</p>
-<pre><code>if giraffe_rect.colliderect(cupcaker):
-    speed = 1
-</code></pre>
-<p>If Guffy eats a fruit or vegetable, his speed increases.</p>
-<pre><code>if giraffe_rect.colliderect(pear):
-    speed = 5
-</code></pre>
-<h2 id="answer">Answer</h2>
-<p>Full code example in the <a href="../answers/">answers</a> section.</p></div>
+<hr />
+<p>Take the code above and modify it with an <code>if</code> statement to 
+print out only <code>coyote</code>. The print statement must be
+in the for loop.</p>
+<hr />
+<p>Modify the code below to print out only <code>MOUSEBUTTONDOWN</code>.</p>
+<pre><code>events = ['MOUSEBUTTONDOWN', 'KEYDOWN', 'KEYUP', 'QUIT']
+
+for event in events:
+    print(event)
+</code></pre></div>
             
         </div>
 
@@ -232,12 +207,12 @@ If he eats a dessert, he will slow down.</p>
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
-        <script src="../js/jquery-1.10.2.min.js"></script>
-        <script src="../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../js/highlight.pack.js"></script>
-        <script>var base_url = '..';</script>
-        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
-        <script src="../js/base.js"></script>
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
             <div class="modal-dialog">
