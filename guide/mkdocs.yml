@@ -13,3 +13,4 @@ pages:
       - Answers: answers.md
     - Exercises:
       - for loops: exercises/for.md
+      - lists: exercises/list.md
