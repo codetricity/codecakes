@@ -358,7 +358,7 @@
         {
             "location": "/project/restaurant/",
             "text": "Restaurant Finder\n\n\nBuild an application to recommend restaurants\nin these cities:\n\n\n\n\nCapitola\n\n\nPalo Alto\n\n\nSanta Cruz\n\n\nSanta Barbara\n\n\n\n\nBuild List\n\n\nStart with Capitola. Build a list of restaurants.\n\n\nrestaurants = [\n    \"Sushi Garden\",\n    \"Betty's Burgers\",\n    \"Asian Express\",\n    \"Mayflower\" \n]\n\n\n\nExtend list to 7 to 10 restaurants. You can use \n\nYelp\n\n\nFind Length of List\n\n\nUsing the Python \nlen(name_of_list)\n command, you can get\nthe length of the list as an integer. Print out the \nlength of the list.\n\n\nPrint Sentence Letting People Know Number of Restaurants\n\n\nConvert integer length to string. Print out the sentence in the\nexample below.\n\n\n\n\nThere are 4 restaurants in the Capitola list.\n\n\n\n\nGenerate Random Number\n\n\nYou can use \nimport random\n at the top of your code.\n\n\nThe syntax is \nrandom.randrange(0, 5)\n.\n\n\nGenerate a random number in the range from 0 to the length of the list\nof restaurants.\n\n\nPrint Random Restaurant\n\n\nUse \nrestaurants[random_number]\n to print a random restaurant.\n\n\nPrint Sentence with Restaurant Recommendation\n\n\n\n\nThere are 4 restaurants in the Capitola list.\n\n\nHow about Betty's Burgers?",
-            "title": "Restaurant Finder"
+            "title": "Restaurant Finder Lesson"
         },
         {
             "location": "/project/restaurant/#restaurant-finder",
@@ -394,6 +394,11 @@
             "location": "/project/restaurant/#print-sentence-with-restaurant-recommendation",
             "text": "There are 4 restaurants in the Capitola list.  How about Betty's Burgers?",
             "title": "Print Sentence with Restaurant Recommendation"
+        },
+        {
+            "location": "/project/restaurantListProject/",
+            "text": "import random\n\ncity = \"Capitola\"\n\nrestaurants = [\n    \"Sushi Garden\",\n    \"Betty's Burgers\",\n    \"Asian Express\",\n    \"Mayflower\"\n    ]\n\nnumRestaurants = len(restaurants)\n\nnumRestaurantsString = str(numRestaurants)\nprint(\"\\n\\n\")\nprint(\"There are \" + numRestaurantsString + \" restaurants in the \" + city +\n    \" list.\")\n\nrandomPositionInList = random.randrange(0, numRestaurants)\n\nrandomRestaurant = restaurants[randomPositionInList]\n\nprint(\"How about \" + randomRestaurant + \"?\")\nprint(\"\\n\\n\")",
+            "title": "Restaurant Finder Code"
         }
     ]
 }

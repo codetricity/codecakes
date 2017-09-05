@@ -85,6 +85,12 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>None/project/restaurantListProject/</loc>
+     <lastmod>2017-09-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
 </urlset>
