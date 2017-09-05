@@ -17,3 +17,5 @@ pages:
     - Projects:
       - Restaurant Finder Lesson: project/restaurant.md
       - Restaurant Finder Code: project/restaurantListProject.md
+      - Meal Lesson: project/meal.md
+      - Meal Project: project/mealProject.md
