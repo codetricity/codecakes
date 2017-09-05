@@ -399,6 +399,41 @@
             "location": "/project/restaurantListProject/",
             "text": "import random\n\ncity = \"Capitola\"\n\nrestaurants = [\n    \"Sushi Garden\",\n    \"Betty's Burgers\",\n    \"Asian Express\",\n    \"Mayflower\"\n    ]\n\nnumRestaurants = len(restaurants)\n\nnumRestaurantsString = str(numRestaurants)\nprint(\"\\n\\n\")\nprint(\"There are \" + numRestaurantsString + \" restaurants in the \" + city +\n    \" list.\")\n\nrandomPositionInList = random.randrange(0, numRestaurants)\n\nrandomRestaurant = restaurants[randomPositionInList]\n\nprint(\"How about \" + randomRestaurant + \"?\")\nprint(\"\\n\\n\")",
             "title": "Restaurant Finder Code"
+        },
+        {
+            "location": "/project/meal/",
+            "text": "Create Separate Lists for Each Meal Type\n\n\nBuild 5 lists\n\n\n\n\nbreakfastList\n\n\nlunchList\n\n\ndinnerList\n\n\nsnackList\n\n\nfullList\n\n\n\n\nSet Up Question Using Triple Quotes\n\n\nquestion = \"\"\"\nAre you looking for \na) breakfast \nb) lunch \nc) dinner\nd) snack\ne) everything\n\ntype in a, b, c, d, or e\n\n\"\"\"\n\n\n\nUse \nraw_input\n or \ninput\n to ask question\n\n\nAssign response to the variable \nanswer\n\n\nUse \nif\n and \nelif\n statements to assign the restaurants list\n\n\nif answer == 'a':\n    restaurants = breakfastList\nelif answer == 'b':\n    restaurants = lunchList\n\n\n\nUse \nwhile\n loop to check for correct answer\n\n\nanswer = \"\"\n\nwhile answer not in ['a', 'b', 'c', 'd', 'e']:\n    answer = raw_input(question)",
+            "title": "Meal Lesson"
+        },
+        {
+            "location": "/project/meal/#create-separate-lists-for-each-meal-type",
+            "text": "Build 5 lists   breakfastList  lunchList  dinnerList  snackList  fullList",
+            "title": "Create Separate Lists for Each Meal Type"
+        },
+        {
+            "location": "/project/meal/#set-up-question-using-triple-quotes",
+            "text": "question = \"\"\"\nAre you looking for \na) breakfast \nb) lunch \nc) dinner\nd) snack\ne) everything\n\ntype in a, b, c, d, or e\n\n\"\"\"",
+            "title": "Set Up Question Using Triple Quotes"
+        },
+        {
+            "location": "/project/meal/#use-raw_input-or-input-to-ask-question",
+            "text": "Assign response to the variable  answer",
+            "title": "Use raw_input or input to ask question"
+        },
+        {
+            "location": "/project/meal/#use-if-and-elif-statements-to-assign-the-restaurants-list",
+            "text": "if answer == 'a':\n    restaurants = breakfastList\nelif answer == 'b':\n    restaurants = lunchList",
+            "title": "Use if and elif statements to assign the restaurants list"
+        },
+        {
+            "location": "/project/meal/#use-while-loop-to-check-for-correct-answer",
+            "text": "answer = \"\"\n\nwhile answer not in ['a', 'b', 'c', 'd', 'e']:\n    answer = raw_input(question)",
+            "title": "Use while loop to check for correct answer"
+        },
+        {
+            "location": "/project/mealProject/",
+            "text": "import random\n\n\nquestion = \"\"\"\nAre you looking for \na) breakfast \nb) lunch \nc) dinner\nd) snack\ne) everything\n\ntype in a, b, c, d, or e\n\n\"\"\"\n\nanswer = \"\"\n\nwhile answer not in ['a', 'b', 'c', 'd', 'e']:\n    answer = raw_input(question)\n\n\ncity = \"Capitola\"\n\nfullList = [\n    \"Sushi Garden\",\n    \"Betty's Burgers\",\n    \"Asian Express\",\n    \"Mayflower\"\n]\n\nbreakfastList = [\n    \"Avenue Cafe\"\n]\n\nlunchList = [\n    \"Chipotle\",\n    \"Betty's Burgers\"\n]\n\ndinnerList = [\n    \"Sushi Garden\",\n    \"Dharma\"\n]\n\nsnackList = [\n    \"Yogurt Land\"\n]\n\nif answer == 'a':\n    restaurants = breakfastList\nelif answer == 'b':\n    restaurants = lunchList\nelif answer == 'c':\n    restaurants = dinnerList\nelif answer == 'd':\n    restaurants = snackList\nelse:\n    restaurants = fullList\n\nnumRestaurants = len(restaurants)\n\nnumRestaurantsString = str(numRestaurants)\nprint(\"\\n\\n\")\nprint(\"There are \" + numRestaurantsString + \" restaurants in the \" + city +\n    \" list.\")\n\nrandomPositionInList = random.randrange(0, numRestaurants)\n\nrandomRestaurant = restaurants[randomPositionInList]\n\nprint(\"How about \" + randomRestaurant + \"?\")\nprint(\"\\n\\n\")",
+            "title": "Meal Project"
         }
     ]
 }
