@@ -1,0 +1,23 @@
+<body>
+    <h1> Caitlyn's Restaurant Finder</h1>
+    <p id="restaurantResponse">
+
+    </p>
+    <script>
+    var restaurants = [
+        "Mayflower",
+        "Sushi Garden",
+        "Dharma",
+        "Asian Express"
+    ];
+
+    var numberRestaurants = restaurants.length;
+
+    var restaurantResponse = document.getElementById("restaurantResponse");
+
+    var responseString = "There are " + numberRestaurants + " restaurants."
+    restaurantResponse.innerHTML = responseString;
+
+    console.log(Math.random());
+    </script>
+</body>
