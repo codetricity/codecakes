@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>lists - Caitlyn's Codecakes Guidebook</title>
+	<title>Restaurant Finder - Caitlyn's Codecakes Guidebook</title>
 
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -116,19 +116,19 @@
                 
                 
                 
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exercises <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../for/">for loops</a>
+    <a href="../../exercises/for/">for loops</a>
 </li>
 
                         
                             
-<li class="active">
-    <a href="./">lists</a>
+<li >
+    <a href="../../exercises/list/">lists</a>
 </li>
 
                         
@@ -137,13 +137,13 @@
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
-<li >
-    <a href="../../project/restaurant/">Restaurant Finder</a>
+<li class="active">
+    <a href="./">Restaurant Finder</a>
 </li>
 
                         
@@ -162,12 +162,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../for/">
+                        <a rel="next" href="../../exercises/list/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li >
-                        <a rel="prev" href="../../project/restaurant/">
+                    <li class="disabled">
+                        <a rel="prev" >
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -183,40 +183,73 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#list">list</a></li>
+        <li class="main active"><a href="#restaurant-finder">Restaurant Finder</a></li>
+        
+    
+        <li class="main "><a href="#build-list">Build List</a></li>
+        
+    
+        <li class="main "><a href="#find-length-of-list">Find Length of List</a></li>
+        
+    
+        <li class="main "><a href="#print-sentence-letting-people-know-number-of-restaurants">Print Sentence Letting People Know Number of Restaurants</a></li>
+        
+    
+        <li class="main "><a href="#generate-random-number">Generate Random Number</a></li>
+        
+    
+        <li class="main "><a href="#print-random-restaurant">Print Random Restaurant</a></li>
+        
+    
+        <li class="main "><a href="#print-sentence-with-restaurant-recommendation">Print Sentence with Restaurant Recommendation</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="list">list</h2>
-<p>A list can be a string, integer, number, image, or any
-piece of information.</p>
-<p>What happens below?</p>
-<pre><code>animals = ['dog', 'cat', 'bird']
-
-print(animals[0])
+<h2 id="restaurant-finder">Restaurant Finder</h2>
+<p>Build an application to recommend restaurants
+in these cities:</p>
+<ul>
+<li>Capitola</li>
+<li>Palo Alto</li>
+<li>Santa Cruz</li>
+<li>Santa Barbara</li>
+</ul>
+<h2 id="build-list">Build List</h2>
+<p>Start with Capitola. Build a list of restaurants.</p>
+<pre><code>restaurants = [
+    "Sushi Garden",
+    "Betty's Burgers",
+    "Asian Express",
+    "Mayflower" 
+]
 </code></pre>
-<hr />
-<p>You can add things to the end of a list with <code>.append()</code>.</p>
-<p>What happens below?</p>
-<pre><code>animals = ['dog', 'cat', 'bird']
-
-animals.append('sheep')
-
-print(animals)
-</code></pre>
-<hr />
-<p>You can iterate through a list.</p>
-<p>What happens?</p>
-<pre><code>animals = ['dog', 'cat', 'bird']
-
-animals.append('sheep')
-
-for animal in animals:
-    print(animal)
-</code></pre></div>
+<p>Extend list to 7 to 10 restaurants. You can use 
+<a href="https://www.yelp.com/search?find_desc=Restaurants&amp;find_loc=Capitola%2C+CA&amp;ns=1">Yelp</a></p>
+<h2 id="find-length-of-list">Find Length of List</h2>
+<p>Using the Python <code>len(name_of_list)</code> command, you can get
+the length of the list as an integer. Print out the 
+length of the list.</p>
+<h2 id="print-sentence-letting-people-know-number-of-restaurants">Print Sentence Letting People Know Number of Restaurants</h2>
+<p>Convert integer length to string. Print out the sentence in the
+example below.</p>
+<blockquote>
+<p>There are 4 restaurants in the Capitola list.</p>
+</blockquote>
+<h2 id="generate-random-number">Generate Random Number</h2>
+<p>You can use <code>import random</code> at the top of your code.</p>
+<p>The syntax is <code>random.randrange(0, 5)</code>.</p>
+<p>Generate a random number in the range from 0 to the length of the list
+of restaurants.</p>
+<h2 id="print-random-restaurant">Print Random Restaurant</h2>
+<p>Use <code>restaurants[random_number]</code> to print a random restaurant.</p>
+<h2 id="print-sentence-with-restaurant-recommendation">Print Sentence with Restaurant Recommendation</h2>
+<blockquote>
+<p>There are 4 restaurants in the Capitola list.</p>
+<p>How about Betty's Burgers?</p>
+</blockquote></div>
             
         </div>
 

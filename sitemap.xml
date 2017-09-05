@@ -3,8 +3,8 @@
 
     
     <url>
-     <loc>/</loc>
-     <lastmod>2017-09-02</lastmod>
+     <loc>None/</loc>
+     <lastmod>2017-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,50 +12,50 @@
     
         
     <url>
-     <loc>/lesson1/</loc>
-     <lastmod>2017-09-02</lastmod>
+     <loc>None/lesson1/</loc>
+     <lastmod>2017-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/lesson02/</loc>
-     <lastmod>2017-09-02</lastmod>
+     <loc>None/lesson02/</loc>
+     <lastmod>2017-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/lesson03/</loc>
-     <lastmod>2017-09-02</lastmod>
+     <loc>None/lesson03/</loc>
+     <lastmod>2017-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/lesson04/</loc>
-     <lastmod>2017-09-02</lastmod>
+     <loc>None/lesson04/</loc>
+     <lastmod>2017-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/text/</loc>
-     <lastmod>2017-09-02</lastmod>
+     <loc>None/text/</loc>
+     <lastmod>2017-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/timer/</loc>
-     <lastmod>2017-09-02</lastmod>
+     <loc>None/timer/</loc>
+     <lastmod>2017-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/level/</loc>
-     <lastmod>2017-09-02</lastmod>
+     <loc>None/level/</loc>
+     <lastmod>2017-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/answers/</loc>
-     <lastmod>2017-09-02</lastmod>
+     <loc>None/answers/</loc>
+     <lastmod>2017-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -64,14 +64,24 @@
     
         
     <url>
-     <loc>/exercises/for/</loc>
-     <lastmod>2017-09-02</lastmod>
+     <loc>None/exercises/for/</loc>
+     <lastmod>2017-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/exercises/list/</loc>
-     <lastmod>2017-09-02</lastmod>
+     <loc>None/exercises/list/</loc>
+     <lastmod>2017-09-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/project/restaurant/</loc>
+     <lastmod>2017-09-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
