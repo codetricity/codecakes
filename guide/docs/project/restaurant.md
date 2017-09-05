@@ -56,4 +56,3 @@ Use `restaurants[random_number]` to print a random restaurant.
 
 > How about Betty's Burgers?
 
-

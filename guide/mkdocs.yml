@@ -15,5 +15,5 @@ pages:
       - for loops: exercises/for.md
       - lists: exercises/list.md
     - Projects:
-      - Restaurant Finder: project/restaurant.md
-
+      - Restaurant Finder Lesson: project/restaurant.md
+      - Restaurant Finder Code: project/restaurantListProject.md
