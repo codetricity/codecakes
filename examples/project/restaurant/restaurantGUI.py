@@ -3,16 +3,37 @@ from sgc.locals import *
 
 import pygame
 from pygame.locals import *
+import random
 
 
 class RestaurantButton(sgc.Button):
     def gameInit(self):
         self.on = False
-        self.config_set = False
-
+        
     def on_click(self):
-        self.message = "This is the text"
+        self.message = ""
         self.on = True
+
+def randomRestaurant():
+    restaurants = [
+        "Sushi Garden",
+        "Asian Express",
+        "Mayflower",
+        "Betty's Burgers",
+        "Erik's Deli Cafe",
+        "Avenue Cafe",
+        "Dharma's",
+        "Wasabi Tapas",
+        "Roux Dat Cajun",
+        "Paradise Beach Grille",
+        "Taqueria Vallata",
+        "iCrave",
+        "Chipotle",
+        "East Side Eatery"
+    ]
+    randRestaurant = random.choice(restaurants)
+    return randRestaurant
+
 
 pygame.init()
 pygame.display.init()
@@ -38,30 +59,41 @@ btn = RestaurantButton(label="Capitola",
 
 btn.gameInit()
 
-label = sgc.Label(pos=(100, 200),
+label = sgc.Label(pos=(20, 240),
                   col=(255, 255, 255),
-                  text="this is the text",
+                  text="",
                   font=fontLarge)
+
+mealChooser = sgc.Combo(
+                    pos=(400, 150),
+                    label="Meal",
+                    label_side="top",
+                    values=("breakfast", "lunch", "dinner", "snack"),
+                    selection=1)
 
 titleSurface = fontTitle.render("Caitlyn's> Restaurants", True, PURPLE)
 
 btn.add(0)
-# label.add()
+label.add(1)
+mealChooser.add(2)
 
 while True:
     time = clock.tick(30)
 
     for event in pygame.event.get():
         sgc.event(event)
-        if event.type == QUIT:
+        if event.type == pygame.QUIT:
             exit()
  
     sgc.update(time)
     if btn.on:
-        if not btn.config_set:
-            label.text = str(pygame.time.get_ticks())
-            label.add()
-            btn.config_set = True
+        selection = mealChooser.selection
+        meals = {0: "breakfast", 1: "lunch", 2: "dinner", 3: "snack"}
+        label.text = (
+                "Caitlyn recommends " + randomRestaurant() +
+                " for " + meals[selection])
+        btn.on = False
+ 
     screen.fill((0, 0, 0))
     screen.blit(titleSurface, (10, 10))
     sgc.update(time)
