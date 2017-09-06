@@ -14,6 +14,7 @@ class RestaurantButton(sgc.Button):
         self.message = ""
         self.on = True
 
+
 def randomRestaurant():
     restaurants = [
         "Sushi Garden",
@@ -38,6 +39,10 @@ def randomRestaurant():
 pygame.init()
 pygame.display.init()
 pygame.font.init()
+
+pygame.display.set_caption("Caitlyn's Restaurants")
+fork_icon = pygame.image.load("img/fork.jpg")
+pygame.display.set_icon(fork_icon)
 
 PURPLE = (199, 46, 245)
 MINT = (193, 248, 230)
