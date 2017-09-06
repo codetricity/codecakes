@@ -15,8 +15,42 @@ class RestaurantButton(sgc.Button):
         self.on = True
 
 
-def randomRestaurant():
-    restaurants = [
+def randomRestaurant(meal):
+    breakfastlist = [
+        "Avenue Cafe",
+        "The Sand Bar",
+        "Zelda's",
+        "Cook House",
+        "Sunrise Cafe"
+        ]
+
+    lunchlist = [
+        "Sushi Garden",
+        "Erik's Deli Cafe",
+        "Betty's Burger",
+        "Chipotle",
+        "Togos",
+        "Dharma's",
+        "Thai Basil"
+    ]
+
+    snacklist = [
+        "iCrave",
+        "Yogurtland",
+        "Penny Creamery",
+        "Baskin Robbins",
+        "Gayle's Bakery",
+        "Jamba Juice",
+        "Verve",
+        "Mr. Toot's Coffeehouse",
+        "Off the Block"
+    ]
+
+    dinnerlist = [
+        "Mayflower"
+    ]
+
+    fulllist = [
         "Sushi Garden",
         "Asian Express",
         "Mayflower",
@@ -32,6 +66,16 @@ def randomRestaurant():
         "Chipotle",
         "East Side Eatery"
     ]
+    if meal == "breakfast":
+        restaurants = breakfastlist
+    elif meal == "lunch":
+        restaurants = lunchlist
+    elif meal == "dinner":
+        restaurants = dinnerlist
+    elif meal == "snack":
+        restaurants = snacklist
+    else:
+        restaurants = fulllist 
     randRestaurant = random.choice(restaurants)
     return randRestaurant
 
@@ -95,7 +139,7 @@ while True:
         selection = mealChooser.selection
         meals = {0: "breakfast", 1: "lunch", 2: "dinner", 3: "snack"}
         label.text = (
-                "Caitlyn recommends " + randomRestaurant() +
+                "Caitlyn recommends " + randomRestaurant(meals[selection]) +
                 " for " + meals[selection])
         btn.on = False
  
