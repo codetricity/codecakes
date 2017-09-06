@@ -62,7 +62,7 @@ numRestaurants = len(restaurants)
 numRestaurantsString = str(numRestaurants)
 print("\n\n")
 print("There are " + numRestaurantsString + " restaurants in the " + city +
-      " list.")
+    " list.")
 
 randomPositionInList = random.randrange(0, numRestaurants)
 
