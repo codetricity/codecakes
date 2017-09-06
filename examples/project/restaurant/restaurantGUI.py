@@ -26,13 +26,15 @@ screen = sgc.surface.Screen((800, 600))
 clock = pygame.time.Clock()
 
 fontOhio = pygame.font.Font("fnt/ohio.ttf", 30)
+fontAbove = pygame.font.Font("fnt/above.ttf", 20)
 fontLarge = pygame.font.Font("fnt/ohio.ttf", 52)
+fontTitle = pygame.font.Font("fnt/painter.ttf", 84)
 
 btn = RestaurantButton(label="Capitola",
-                       label_font=fontOhio,
+                       label_font=fontAbove,
                        label_col=MINT,
                        col=PURPLE,
-                       pos=(100, 100))
+                       pos=(100, 150))
 
 btn.gameInit()
 
@@ -40,6 +42,8 @@ label = sgc.Label(pos=(100, 200),
                   col=(255, 255, 255),
                   text="this is the text",
                   font=fontLarge)
+
+titleSurface = fontTitle.render("Caitlyn's> Restaurants", True, PURPLE)
 
 btn.add(0)
 # label.add()
@@ -59,5 +63,6 @@ while True:
             label.add()
             btn.config_set = True
     screen.fill((0, 0, 0))
+    screen.blit(titleSurface, (10, 10))
     sgc.update(time)
     pygame.display.flip()
