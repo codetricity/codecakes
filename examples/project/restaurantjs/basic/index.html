@@ -12,12 +12,17 @@
     ];
 
     var numberRestaurants = restaurants.length;
-
+    randomNumber = Math.floor(Math.random() * numberRestaurants);
+    console.log(randomNumber);
     var restaurantResponse = document.getElementById("restaurantResponse");
 
-    var responseString = "There are " + numberRestaurants + " restaurants."
+    var responseString = "There are " + numberRestaurants + " restaurants.";
+    responseString = responseString + " The random number is " + randomNumber +".";
+    var recommendedRestaurant = restaurants[randomNumber];
+    responseString = responseString + " I recommend " + recommendedRestaurant + " for you today.";
+
     restaurantResponse.innerHTML = responseString;
 
-    console.log(Math.random());
+    
     </script>
 </body>
