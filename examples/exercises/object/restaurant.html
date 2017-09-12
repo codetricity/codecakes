@@ -1,0 +1,44 @@
+<html>
+    <body>
+        <h1>
+            Caitlyn's Unfinished Restaurant Finder
+        </h1>
+        <p>
+            Caitlyn recommends
+            <a id="restaurantLink" href=""></a>
+        </p>
+        <button onclick="getRestaurant()">Get Recommendation</button>
+    <script>
+
+        function getRestaurant() {
+
+       
+            var restaurant1 = {
+                "name": "iCrave", 
+                "url": "https://www.yelp.com/biz/icrave-capitola-2"};
+            var restaurant2 = {
+                "name": "Sushi Garden",
+                "url": "https://www.yelp.com/biz/sushi-garden-capitola"};
+            var restaurant3 = {
+                "name": "Asian Express",
+                "url": "https://www.yelp.com/biz/asian-express-capitola-2"};
+            var restaurants = [
+                restaurant1,
+                restaurant2,
+                restaurant3
+            ];
+            var length = restaurants.length;
+            console.log(restaurants[0].name, restaurants[0].url);
+            console.log(restaurants[1].name, restaurants[1].url);
+            console.log(restaurants[2].name, restaurants[2].url)
+            console.log(length);
+
+            var restaurantLink = document.getElementById("restaurantLink");
+            restaurantLink.innerHTML = restaurants[2].name;
+            restaurantLink.href = restaurants[2].url;
+
+    }
+    </script>
+    </body>
+    
+    </html>

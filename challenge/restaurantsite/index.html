@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>reveal-md</title>
+        <link rel="stylesheet" href="./css/reveal.css">
+        <link rel="stylesheet" href="./css/theme/black.css" id="theme">
+        <link rel="stylesheet" href="./css/highlight/zenburn.css">
+        <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print">
+
+    </head>
+    <body>
+
+        <div class="reveal">
+            <div class="slides"><section  data-markdown><script type="text/template"># Caitlyn's Restaurant Finder
+
+![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAc1eAAHNXgG4cpNaAAAAB3RJTUUH4QkKDy4xIuSuuQAADMtJREFUeNrtnXl0VNUdxz/3zZJVQiAwgCyyyhEp6KlaKWLVIBHjaYYacbcVLYq1Fnv0NGpb9dQz1Z6qba31tLRupQc6SkZNZdDRulaKC+ihsgjERII8IAsJJJlkZl7/mBmYvLxJJvPeLCTv+w/c5d1lvu+33Ht/9wVMmDBhwoQJEyZMmDBhwoSJoYJl95f3SJdXV2TdGMVQIuSBhReP3ebM/WV7iWQJ2TgIHATqgM9rnJ7tJiFpRFVl2Y+COeKxrUtzrFIgbrXNwAvAUzVOT1N5dQU1To9JiEEE4HJ7qaosuwN4RCjY955jo2maJdEm1gPLa5yer9I5bmkwEhE1EVWVZc3A44BdEdA4wzKQpi4B6surKx5Ip72RBqFwFFdVlr0LvAIMj2Y2TrcglKTa+0V5dcUbNU5PWkiRBpNUVFWWLQOagPk9JhmAphlWUJLu4sLy6opX0mFPxCAhQwCvAaVadYJ2wdarcpC6dXd3U43T81dTQvrGBKAxHhkAhydKiIAhfa0qr66wmITEl47zgHqgWKN4E4AIwZExUrL2Q9OmmIRok7EUeEejqBbIByZFCWkvMXSad5qE9CbjRmCNRlG1y+2dAkwFHABCUfAPM9RUFpZXV8wxCTlOxjWAlmG93+X2Lon8//poZiBXpMJ1uTRV87OeYGQsBP6uUfR9l9v7bEw6Sgwhi9Dj7sbDuUOakIhrOz3i2qpxlcvtXRNTNzeissJ+fUipR2GiwUP6xpBVWREyrMAnGsU3q8gAuCi2gv2IskGEDB/WxCFLiMvtBXgfKFQVPeRye1dp1J2vqveZUNh5oqjlE0FC7gLOVmWvd7m998V55AzVKn0H8C+jx1VeXVE4pAipqiyjqrLsFOARVZHscnsXx+zqqjE7NqFIfAg8mYIh5g0pQiLqZ71G0VnRs444GKdqp6XG6dkVZxGpBynZQrFmsYQsB2aqsn/qcnu/6uMZexz1ArAU+NokJDmvCg01s8Pl9j7az+OjtDIj2+b7y6srroyzwk8GSirmn3UqK6KKfqsxtkv7sBtRnNRXYY3Tsxa4I5sJsWahdOTRewPvWZfbuzuBJuz9Vahxen5fXl2xywDPyzLoJSQiHQ9pFN2agHQAJLQErHF6XiW8Zf+ujuHahoqXtVKVftTl9nb04VXFonMA/bTUOD0LgPOAD5MYZ/GgJ6SqsmylRvZ9CUoHwOFEK8acj79X4/ScDUwhHKGSaBvTUhH0kG0S8jNV+rkBSAcut/fgQDuMIaa2xulZWeP0DCe8OXk7sK4PV/mSVAQ9iCyRDCLbI/9VFU0HdiVKSKQttfdjd7m9usMbyqsrJgGnED7DLwGG1Tg9Dw5KLysSYbhClf25y+3dlURztcDkmPT5gE/vGGucnjrCccApRTaprOtV6T8k2c42Vfp8TiBkXEIi6up8DfX5tySb3AIsjklfBPz8RCEk4xISsQ+VquyNLre3K0lyN6qyZ59IEpItKmuJKr1GB7lvq7ILqyrLxpmEJP5WFwFjVdnVOiSulXB8byxuNAlJXMVcrMpud7m99TqbVu9T/dgkJHEV8x1V9msGkKyWsFFVlWUOk5DEME+VflcvyS63V0vlXW4SkhjmqtIfGNTum6r0ff09oDh6BtArs132L6S8Ecr471nj1RlUWydVlWUlhG/CxiLP5fZ26mwX4GpgtapoDvBZvK2YA/mTTz/sl68NKYGykBKcIwkrpxSfid1aEEvyM0L2PT9YCTkfeCsmK+Bye20Gtq/e1/qTy+1d0WuvxTZ8WVew4/5AyD8+mpdrLWDKyHnEORhsB64Tsm+d4ihFyL5Bo7Km97PtoRfqN3k5wNf5EwDYYyu+YrtkbWnvblkVS4bVksOUkefSxyltPvCi4ihdI2SfoWosZYQkOEh1SGatwS71w+r5VlWWXSUJUbJDsn/U0d28NhgKFPUYNzB1xDmJdrNUcZS+ZyQpIkVkTAUWEg5KnghEJ90G7AV2EeTjB8+z3thp5eroc6PblZd/8mFwA4LZhM8kxhC+SWsjfBrYEiHtU+AtIfvejpIfT21UVZZtBWZF0yFJOrhs7aujtPbjFeDkYacxPG/AC/sXhOyrzBpCoj+I4ii9C7iLOOE46tmvnmXhfyXHh1BaF+LCugFHRj8L3CtkX4OamIiUVMSuS0JCMH/TZ0z5sqFXQ3m2YUweeS4owWR+hpuF7FuVLYTMBzZEdGtiCMFfzrBQWySOvZ2X7Q4xryHpUPUnhey7TU1KECY/+N2LdnTZbcecBWswyDXrXifYczicWjIfmyVXz09RDLToMfKSAWTcFlnM5Q/02aDo+WpY9F0bWKE4Fu7ZfuDNC3Zach/eLlm3fo5QtsOes7Zss4XE8c66rFZ2T+y5fTYi72RsFt3huqv1elySTjIqgSf6U03xnBVbqGc1m+57HMrk8UVz3vQHO+8OhgKzlEjH0+v2kd/pPz5pRaGpuKhH32NOmoEBsW+LFUfpLD0GXkqSCBRH6Qjgn31WtEhwXRlcu0iz50W1IbosYUnJDcLcA/pv1hTmlDAqv6fzFgAWfLCFbquVkCQRsFiYVrv3uJ7JG4ckDDure0yPlAgd0vEKUK6ti0Iwdzq4bgVJAiHgnc3wq6fB0jPgr8MK9cMEpzYZGJkpJLbLPkJKT4L9OXYOlgzHcaAJW3fgmO2YOWoBVsmOgRgDyMkQIyUpHY4+yVh0DvxuZZgMAEWBBXPB39vZzAtgLBkASohRhdN6Zef4uxjfcOAYGQCFtmKs+gy5Fu5OVkoGTEiko9vjVvjmTLjnBujs6qm6Nm0De0qiLzUxIn9Cv3GlClBSMAkUwy8hrki3Ub8irs341fKeZEgS/PFFuPcpsFrSRogQFgpsRf3q68LclByT5CqO0m8nY9yTtWTTe68rFLj5MpBU98JveBD2N6aVjKjaKswZSUd3/MjQ4XnjUiEdUVwpZN/76bAhZ2gWdHVDxYLjZFgs8JvVIDeFjXoGkGcriuvIKkBR7hhSdM0DkvzaQzIqa4Zm7uypkBPjqXR0wqv/IZPIsRT0+XMX5JSksvvJ6SJkrDZNEyEQ81Gqj7aBLbNxeH1tgxTYhqdeazpKT08HIcM0c0uKwnYkigMtYSOfSfSx2CvMGZlK+xHFlHQQ0nuWinJ8zXGs5ez4eqCIYz/y+vHADEJJOgjp1vAx4WhHz9mPLg4vEjMMJS4hw9JixtJByBHN3H2HQLKobEow43QocaRGknLTMYCOdBBySDN3Zz3YYggpKoRQZiVECXVrqiybZE+luxuL/ekgZK9mbp0McnP4/3YbVL8FufaMEhII+bUnLdLm/e1Ix0pdu5M8O/zQBbcsgU+2w/qNYM+s2+sPHM1onJOQfbUpJ0TIvn1x92ja2uHXz4U9LHvmb8t1BNo0CQkq3eno/u10LQwB3otbYpEytlXS882RaO9q0nYTQ2kh5B/pJMTDCYAjXc3xfffAkVR3vyqdhDyd7WS0dcp9LhaPxpEeg/BnIftCaSNEyL4mdF4bSLW6amqvj2vQBdDqPwgiZVs7dyYb6JCU5Y10dk+2ktIdaKetq7nPt63NfygSEGe4vbtbyL6jSb9LuhZejtKNwDnZJh31zR9zxN/Yb9XRhVMpKZhsZO+fCdmn6zPkkg4yoPft2Yyj3d9IawJkABw4sjvO5kpyXQPf0ht0nTQhQvYhZN8+4LZsIUNBoa5l84AmtbflUxC6j5dDhA/uOjIauRgh5kn6C5hLk6qqbdyEMsAzjlb/IRqP7tGjvTsI/2mMBiMu7hgR24uQfUvReXtWv934iM5AW1JGdH/bFzS21yXjdX0BjAb2GnWLyggJiZKyCHguE3w0Hf1yS5s/+XVFmJSdYfWVuKQ8LmTfDOBI1l1piyHlBnp/1SeV6ADmjWzbecaIvJMfEjq2bATQ2imz7cAbNHc0RKRFs70dwGlC9q00+n6hYYRESYn8+zzhW0/rU0zGE0L25RO5Rj2uo+G+0YXTz7RJOV/r8ZsUJcS+1m1sk19nf9t22rtbokX1wBIh+2YSuQtpNBmGEqLCYSH7FgOnAS8ZTQQwXMi+29VvaGvn/s0zQv5xBbaiWyyS7bAeaQkpCs0dDdQ3b9mwVfZdIGTfJCI3sVJBhCELwwQNPoqj1A78gPDXFAbqqLcS/nbJWiH7Xopttz/ssRVd3BU8elNIUS5XlKCI7y4f/zHslnwkYfHaLLkvTpi37hnx7/MCX+dPYGx7ev4kbkb2yRVH6XjCF0KjFzuHRbZx/IQvdjYAO4FPhOxrGwgJsdhfMIkxR8Nf5fsqb8zkzu7Ws1CUUxUYLRAnCSEpkpBaLMK+P8eWv8NRNHez2PdyHUBD7nhO7tzLkEKqP1NhwoQJEyZMmDBhwoQJEyZMnHD4P4TpS5cRuW+ZAAAAAElFTkSuQmCC)
+</script></section><section  data-markdown><script type="text/template">
+## Web Page
+
+- Create Web Page for Caitlyn's Restaurant Finder
+- Use `<h1></h1>`
+- Create JavaScript section with `<script>__SCRIPT_END__`
+</script></section><section  data-markdown><script type="text/template">
+
+## Steps To Get Name of Restaurant
+
+- Make a list of restaurants
+    - test: print list to console
+- Create random number
+    - test: print number to console
+</script></section><section  data-markdown><script type="text/template">
+## Continued
+
+- Convert random number to integer (needed for JavaScript)
+    - test: print integer to console
+- Pull random restaurant from list with `list_name`[random_number]
+    - test: print restaurant to console
+</script></section><section  data-markdown><script type="text/template">
+## Console to Web
+
+- Create paragraph `<p></p>`
+- add `id="idName"` to first `<p>`
+- `var youVar = document.getElementById("idName")`
+- `youVar.innerHTML = "string"`
+- `youVar.innerHTML = randomRestaurant`
+
+</script></section></div>
+        </div>
+
+        <script src="./lib/js/head.min.js"></script>
+        <script src="./js/reveal.js"></script>
+
+        <script>
+            function extend() {
+              var target = {};
+              for (var i = 0; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) {
+                  if (source.hasOwnProperty(key)) {
+                    target[key] = source[key];
+                  }
+                }
+              }
+              return target;
+            }
+
+            // Optional libraries used to extend on reveal.js
+            var deps = [
+              { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: './plugin/zoom-js/zoom.js', async: true },
+              { src: './plugin/notes/notes.js', async: true },
+              { src: './plugin/math/math.js', async: true }
+            ];
+
+            // default options to init reveal.js
+            var defaultOptions = {
+              controls: true,
+              progress: true,
+              history: true,
+              center: true,
+              transition: 'default', // none/fade/slide/convex/concave/zoom
+              dependencies: deps
+            };
+
+            // options from URL query string
+            var queryOptions = Reveal.getQueryHash() || {};
+
+            var options = {"controls":true,"progress":true};
+            options = extend(defaultOptions, options, queryOptions);
+        </script>
+
+
+        <script>
+            Reveal.initialize(options);
+        </script>
+    </body>
+</html>
